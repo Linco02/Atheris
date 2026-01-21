@@ -1,8 +1,8 @@
 { pkgs, stateVersion, hostname, ... }:
 
 let
-  modules = ./modules;
-  packages = ./pkgs;
+  modules = .special/modules;
+  packages = .special/pkgs;
 in
 {
   imports = [
