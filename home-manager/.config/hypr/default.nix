@@ -3,16 +3,16 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    # settings = {
-    #   source = [ "./hyprland/hyprland.conf" ];
-    # };
+    extraConfig = ''
+      source = ~/.config/hypr/hyprland.conf
+    '';
   };
 
   programs.hyprlock = {
     enable = true;
-    # settings = {
-    #   source = [ "./hyprlock/hyprlock.conf" ];
-    # };
+    extraConfig = ''
+      source = ~/.config/hypr/hyprlock.conf
+    '';
   };
 
   services.hyprpaper = {
@@ -27,10 +27,8 @@
     # };
   };
 
-  home.file.".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
   home.file.".config/hypr/binds.conf".source = ./hyprland/binds.conf;
   home.file.".config/hypr/visual.conf".source = ./hyprland/visual.conf;
 
-  home.file.".config/hypr/hyprlock.conf".source = ./hyprlock/hyprlock.conf;
   # home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper/hyprpaper.conf;
 }
