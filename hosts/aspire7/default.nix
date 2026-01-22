@@ -3,12 +3,9 @@
 let
   modules = ./special/modules;
   packages = ./special/pkgs;
-  hwConfig = if builtins.pathExists ./hardware-configuration.nix 
-             then [ ./hardware-configuration.nix ]
-             else [ ];
 in
 {
-  imports = hwConfig ++ [
+  imports = [
     # "${modules}/programs/vscode.nix"
     "${modules}/hardware.nix"
     "${modules}/programs.nix"
@@ -18,6 +15,8 @@ in
     "${packages}/game.nix"
     "${packages}/shell.nix"
     "${packages}/utils.nix"
+
+    ./hardware-configuration.nix
   ];
 
   # Docker налаштування

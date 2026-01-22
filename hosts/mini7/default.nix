@@ -2,13 +2,12 @@
 
 let
   modules = ./special/modules;
-  hwConfig = if builtins.pathExists ./hardware-configuration.nix 
-             then [ ./hardware-configuration.nix ]
-             else [ ];
 in
 {
-  imports = hwConfig ++ [
+  imports = [
     "${modules}/hardware.nix"
     "${modules}/services.nix"
+
+    /etc/nixos/hardware-configuration.nix
   ];
 }
