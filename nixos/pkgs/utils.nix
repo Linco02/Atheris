@@ -7,8 +7,6 @@
     unzip
     unrar
     xarchiver
-    gparted
-    git
     microfetch
     git
     wget

@@ -9,7 +9,6 @@
     appimage-run
     vesktop
     deluge
-    appimage-run
     kdePackages.kdenlive
     gimp
     krita

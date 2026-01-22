@@ -20,11 +20,12 @@ git clone https://github.com/Linco02/Atheris
 ```
 cp /etc/nixos/hardware-configuration.nix ~/Atheris/hosts/profile
 ```
+Якщо встановленна версія з grub потрібно змінити налаштування в /nixos/modules/boot.nix з bootloader --> grub
 
 4. Потім замінивши profile на вибраний застовуємо до системи
 
 ```
-nixos-rebuild switch --flake ~/Atheris#profile
+nixos-rebuild switch --flake ~/Atheris#profile --impure --refresh
 ```
 
 ## 🖼️ Preview 🖼️
