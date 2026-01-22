@@ -2,7 +2,7 @@
 information
 
 ## ⭐ Installation ⭐
-insturction
+curl -fsSL https://github.com/Linco02/Atheris/install.sh | bash
 
 ## 🖼️ Preview 🖼️
 images
