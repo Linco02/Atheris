@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./pkgs/${homename}
     ./.config
   ];
 
@@ -11,6 +10,4 @@
     homeDirectory = "/home/${user}";
     stateVersion = homeStateVersion;
   };
-
-  services.dunst.enable = true;
 }
