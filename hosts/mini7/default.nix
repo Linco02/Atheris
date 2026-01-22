@@ -1,9 +1,14 @@
 { pkgs, ... }:
 
+let
+  modules = ./special/modules;
+  hwConfig = if builtins.pathExists ./hardware-configuration.nix 
+             then [ ./hardware-configuration.nix ]
+             else [ ];
+in
 {
-  imports = [
-    ./special/modules/hardware.nix
-    ./special/modules/services.nix
-    ./hardware-configuration.nix
+  imports = hwConfig ++ [
+    "${modules}/hardware.nix"
+    "${modules}/services.nix"
   ];
 }
