@@ -27,8 +27,15 @@
     # };
   };
 
-  home.file.".config/hypr/binds.conf".source = ./hyprland/binds.conf;
-  home.file.".config/hypr/visual.conf".source = ./hyprland/visual.conf;
+  # home.file.".config/hypr/binds.conf".source = ./hyprland/binds.conf;
+  # home.file.".config/hypr/visual.conf".source = ./hyprland/visual.conf;
 
   # home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper/hyprpaper.conf;
+
+  home.file = {
+    ".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
+    ".config/hypr/binds.conf".source = ./hyprland/binds.conf;
+    ".config/hypr/visual.conf".source = ./hyprland/visual.conf;
+    ".config/hypr/hyprlock.conf".source = ./hyprlock/hyprlock.conf;
+  };
 }
