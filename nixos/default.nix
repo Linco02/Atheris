@@ -1,3 +1,4 @@
+{ config, pkgs, stateVersion, ... }:
 let
   modulesPath = ./modules;
   pkgsPath = ./pkgs;

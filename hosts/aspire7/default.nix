@@ -6,7 +6,7 @@ let
 in
 {
   imports = [
-    "${modules}/programs/vscode.nix"
+    # "${modules}/programs/vscode.nix"
     "${modules}/hardware.nix"
     "${modules}/programs.nix"
     "${modules}/services.nix"
