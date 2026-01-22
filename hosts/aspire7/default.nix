@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, hostname, ... }:
+{ pkgs, ... }:
 
 let
   modules = ./special/modules;
