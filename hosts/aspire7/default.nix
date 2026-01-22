@@ -16,7 +16,7 @@ in
     "${packages}/shell.nix"
     "${packages}/utils.nix"
 
-    ./hardware-configuration.nix
+    etc/nixos/hardware-configuration.nix
   ];
 
   # Docker налаштування

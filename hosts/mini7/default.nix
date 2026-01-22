@@ -8,6 +8,6 @@ in
     "${modules}/hardware.nix"
     "${modules}/services.nix"
 
-    ./hardware-configuration.nix
+    etc/nixos/hardware-configuration.nix
   ];
 }
