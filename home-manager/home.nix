@@ -10,4 +10,6 @@
     homeDirectory = "/home/${user}";
     stateVersion = homeStateVersion;
   };
+
+  services.dunst.enable = true;
 }

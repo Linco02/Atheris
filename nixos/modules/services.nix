@@ -2,9 +2,6 @@
 
 {
   services = {
-    # Менеджер сповіщень
-    dunst.enable = true;
-
     # Bluetooth менеджер
     blueman.enable = true;
 
