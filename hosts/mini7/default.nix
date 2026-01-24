@@ -5,7 +5,6 @@ let
 in
 {
   imports = [
-    "${modules}/boot.nix"
     "${modules}/hardware.nix"
     "${modules}/services.nix"
 

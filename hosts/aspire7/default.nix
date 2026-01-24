@@ -7,7 +7,6 @@ in
 {
   imports = [
     # "${modules}/programs/vscode.nix"
-    "${modules}/boot.nix"
     "${modules}/hardware.nix"
     "${modules}/programs.nix"
     "${modules}/services.nix"

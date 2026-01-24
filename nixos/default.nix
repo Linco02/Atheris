@@ -5,6 +5,7 @@ let
 in
 {
   imports = [
+    "${modulesPath}/boot.nix"
     "${modulesPath}/hardware.nix"
     "${modulesPath}/homemanager.nix"
     "${modulesPath}/network.nix"
