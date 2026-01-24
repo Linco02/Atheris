@@ -12,8 +12,6 @@
     wget
     htop
     dunst
-    udisks2
-    gvfs
     ntfs3g
     exfatprogs
     os-prober

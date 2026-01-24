@@ -1,6 +1,6 @@
 {
   programs.waybar = {
-    enable = false;
+    enable = true;
   };
 
   home.file = {
