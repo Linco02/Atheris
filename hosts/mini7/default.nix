@@ -1,6 +1,6 @@
 {
   imports = [
     ./modules
-    /etc/nixos/hardware-configuration.nix
+    ./disco.nix
   ];
 }
