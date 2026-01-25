@@ -14,24 +14,6 @@
     kitty
     rofi
 
-    # Налаштування зовнішнього вигляду
-    hyprpaper
-    waypaper
-
-    # Інші корисні пакети
-    nwg-look
-    gnome-shell
-    glance
-
-    # Мультимедійні програми
-    vlc
-    mpv
-    ffmpeg
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
-    gst_all_1.gst-libav
-
     # Аудіо та Bluetooth підтримка
     pulseaudio
     pavucontrol
