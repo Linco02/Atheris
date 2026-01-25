@@ -1,8 +1,10 @@
 {
   boot.loader = {
+    # Ввімкнення підтримки EFI-змінних
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = false;
 
+    # Налаштування GRUB-завантажувача
     grub = {
       enable = true;
       efiSupport = true;

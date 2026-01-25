@@ -7,11 +7,11 @@
     hyprland
     hyprlock
     waybar
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
 
     # Основні утиліти для роботи в терміналі та файловому менеджері
     kitty
-    fish
-    # thunar
     rofi
 
     # Налаштування зовнішнього вигляду

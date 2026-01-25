@@ -1,6 +1,7 @@
 { hostname, ... }:
 
 {
+  # Налаштування мережі
   networking = {
     firewall = {
       enable = true;

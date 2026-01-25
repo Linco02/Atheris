@@ -22,7 +22,5 @@
     hyprshot
     kdePackages.kcalc
     brightnessctl
-    xdg-desktop-portal
-    xdg-desktop-portal-hyprland
   ];
 }

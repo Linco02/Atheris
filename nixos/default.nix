@@ -15,7 +15,6 @@ in
     "${modulesPath}/user.nix"
 
     "${pkgsPath}/developer.nix"
-    "${pkgsPath}/fonts.nix"
     "${pkgsPath}/shell.nix"
     "${pkgsPath}/utils.nix"
   ];

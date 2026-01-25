@@ -1,9 +1,14 @@
-{ pkgs, homeStateVersion, user, ... }:
+{ pkgs, homeStateVersion, user, hostname, ... }:
 
 {
   imports = [
-    ./.config
-  ];
+    ./modules
+    ./users/${hostname}
+  ]
+  ++ lib.optional (builtins.pathExists ./users/${hostname}/modules)
+    ./users/${hostname}/modules
+  ++ lib.optional (builtins.pathExists ./users/${hostname}/pkgs)
+    ./users/${hostname}/pkgs;
 
   home = {
     username = user;

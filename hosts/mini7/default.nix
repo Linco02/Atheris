@@ -1,13 +1,6 @@
-{ pkgs, ... }:
-
-let
-  modules = ./special/modules;
-in
 {
   imports = [
-    "${modules}/hardware.nix"
-    "${modules}/services.nix"
-
+    ./modules
     /etc/nixos/hardware-configuration.nix
   ];
 }
