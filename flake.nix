@@ -18,6 +18,11 @@
       url = "github:quickshell-mirror/quickshell?ref=v0.2.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, waybar, quickshell, ... }@inputs:
