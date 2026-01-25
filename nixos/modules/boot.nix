@@ -11,9 +11,9 @@
       device = "nodev";
       useOSProber = true;
 
-      theme = ../../assets/grub2;
-      gfxmodeEfi = "1920x1080";
-      gfxpayloadEfi = "keep";
+      # theme = ../../assets/grub2;
+      # gfxmodeEfi = "1920x1080";
+      # gfxpayloadEfi = "keep";
     };
   };
 }
