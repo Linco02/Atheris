@@ -25,7 +25,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, waybar, quickshell, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, waybar, quickshell, disko, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
