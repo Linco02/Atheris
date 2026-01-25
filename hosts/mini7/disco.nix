@@ -1,8 +1,8 @@
 {
   disko.devices = {
     disk = {
-      testdisk = {
-        device = "/dev/vda"; # 'vda' зазвичай використовується у віртуальних машинах
+      my-disk = {
+        device = "/dev/sda"; # 'vda' зазвичай використовується у віртуальних машинах
         type = "disk";
         content = {
           type = "gpt";
