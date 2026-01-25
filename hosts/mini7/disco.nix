@@ -1,8 +1,10 @@
+{ pkgs, ... }:
+
 {
   disko.devices = {
     disk = {
       my-disk = {
-        device = "/dev/sda"; # 'vda' зазвичай використовується у віртуальних машинах
+        device = "/dev/sda";
         type = "disk";
         content = {
           type = "gpt";
