@@ -17,10 +17,8 @@
     # Аудіо та Bluetooth підтримка
     pulseaudio
     pavucontrol
-    pipewire
     wireplumber
     bluez
     bluez-tools
-    blueman
   ];  
 }
