@@ -49,6 +49,7 @@
             inherit inputs stateVersion hostname user;
           };
           modules = [
+            inputs.disko.nixosModules.disko
             ./hosts/${hostname}
             ./nixos
           ];
