@@ -30,12 +30,13 @@
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
       homeStateVersion = "25.05";
+      defaultUser = "linco02";
       pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
       # Build a NixOS system for a host.
       makeSystem = { hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs stateVersion hostname; };
+        specialArgs = { inherit inputs stateVersion hostname user; };
         modules = [
           inputs.disko.nixosModules.disko
           ./hosts/${hostname}
@@ -52,13 +53,13 @@
     in
     {
       nixosConfigurations = {
-        aspire7 = makeSystem { hostname = "aspire7"; stateVersion = homeStateVersion; };
-        mini7   = makeSystem { hostname = "mini7";   stateVersion = homeStateVersion; };
+        aspire7 = makeSystem { user = defaultUser; hostname = "aspire7"; stateVersion = homeStateVersion; };
+        mini7   = makeSystem { user = defaultUser; hostname = "mini7";   stateVersion = homeStateVersion; };
       };
 
       homeConfigurations = {
-        "aspire7" = makeHome { user = "linco02"; hostname = "aspire7"; };
-        "mini7" = makeHome { user = "linco02"; hostname = "mini7"; };
+        "aspire7" = makeHome { user = defaultUser; hostname = "aspire7"; };
+        "mini7" = makeHome { user = defaultUser; hostname = "mini7"; };
       };
     };
 }
