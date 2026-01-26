@@ -7,7 +7,6 @@
     ntfs3g
     exfatprogs
     os-prober
-    brightnessctl
     dnsmasq
   ];
 }

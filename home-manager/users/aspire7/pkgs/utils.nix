@@ -30,10 +30,12 @@
     unzip
     unrar
     sassc
+    pavucontrol
 
     gdk-pixbuf
     poppler
     ffmpegthumbnailer
 
+    brightnessctl
   ];
 }

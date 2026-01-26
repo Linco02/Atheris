@@ -19,5 +19,9 @@
     kdePackages.qt6ct
     kdePackages.qt5compat
     qtcreator
+
+    meson
+    ninja
+    cmake
   ];
 }

@@ -8,6 +8,8 @@
     # Налаштування зовнішнього вигляду
     hyprpaper
     waypaper
+    hyprlock
+    waybar
 
     # Мультимедійні програми
     vlc
@@ -22,5 +24,7 @@
     nwg-look
     gnome-shell
     glance
+    rofi
+
   ];  
 }
