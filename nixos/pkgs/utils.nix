@@ -8,5 +8,6 @@
     exfatprogs
     os-prober
     brightnessctl
+    dnsmasq
   ];
 }

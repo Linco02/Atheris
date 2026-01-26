@@ -9,6 +9,7 @@
     waybar
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
+    home-manager
 
     # Основні утиліти для роботи в терміналі та файловому менеджері
     kitty

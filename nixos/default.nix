@@ -28,20 +28,19 @@ in
   # Дозвіл на використання unfree пакетів
   nixpkgs.config.allowUnfree = true;
 
-  # Основні пакети системи
-  environment.systemPackages = with pkgs; [
-    home-manager
-    ntfs3g
-    exfatprogs
-  ];
-
   # Налаштування xdg-portal для Hyprland
   xdg.portal = {
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-wlr
     ];
+    config.common.default = "*";
+  };
+
+  # Налаштування віртуалізації
+  virtualisation = { 
+    docker.enable = true;
+    libvirtd.enable = true;
   };
 }
