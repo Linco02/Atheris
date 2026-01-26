@@ -4,10 +4,8 @@
   imports = [
     ./modules
   ]
-  ++ lib.optional (builtins.pathExists ./users/${hostname}/modules)
-    ./users/${hostname}/modules
-  ++ lib.optional (builtins.pathExists ./users/${hostname}/pkgs)
-    ./users/${hostname}/pkgs;
+  ++ lib.optional (builtins.pathExists (./users + "/${hostname}/modules.nix")) ./users/${hostname}/modules.nix
+  ++ lib.optional (builtins.pathExists (./users + "/${hostname}/packages.nix")) ./users/${hostname}/packages.nix;
 
   home = {
     username = user;
