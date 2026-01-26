@@ -73,7 +73,7 @@
 
         # Pass explicit inputs to the Home Manager modules (prefer this to passing `inputs`).
         extraSpecialArgs = {
-          inherit nixpkgs home-manager homeStateVersion user;
+          inherit nixpkgs home-manager homeStateVersion user hostname;
         };
 
         modules = [

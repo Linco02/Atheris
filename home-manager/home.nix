@@ -3,7 +3,6 @@
 {
   imports = [
     ./modules
-    ./users/${hostname}
   ]
   ++ lib.optional (builtins.pathExists ./users/${hostname}/modules)
     ./users/${hostname}/modules
