@@ -20,6 +20,10 @@ cd /Atheris/
 ```
 
 ```
+sudo nixos-generate-config --no-filesystems --root /mnt
+```
+
+```
 sudo nixos-install --flake .#mini7
 ```
 
