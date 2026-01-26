@@ -48,7 +48,10 @@
       makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit nixpkgs home-manager homeStateVersion user hostname; };
-        modules = [ ./home-manager/${hostname}/home.nix ];
+        modules = [
+          ./home-manager/home.nix
+          ./home-manager/users/${hostname}
+        ];
       };
     in
     {
