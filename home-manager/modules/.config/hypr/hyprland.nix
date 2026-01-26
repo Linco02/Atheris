@@ -11,6 +11,13 @@
       # Load color scheme from wallpaper
       source = "~/.cache/hellwal/hyprland-colors.conf";
 
+      # Monitor configuration
+      monitor = [
+        "Monitor Virtual-1,1920x1080@60,0x0,1"
+        # "eDP-1,1920x1080@60,0x0,1"
+        # "HDMI-A-1,2560x1440@144,1920x0,1"
+      ];
+
       # Startup commands executed on Hyprland launch
       exec-once = [
         "/nix/store/fxd030lwhc81ajzxbvxcj1y0p8mgf52q-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
