@@ -35,7 +35,7 @@
       # Build a NixOS system for a host.
       makeSystem = { hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs stateVersion hostname user; };
+        specialArgs = { inherit inputs stateVersion hostname; };
         modules = [
           inputs.disko.nixosModules.disko
           ./hosts/${hostname}
