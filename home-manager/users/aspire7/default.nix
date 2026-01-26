@@ -3,5 +3,5 @@
     ../../modules
     ./modules
     ./pkgs
-  ]
+  ];
 }
