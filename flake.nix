@@ -30,55 +30,35 @@
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
       homeStateVersion = "25.05";
-      user = "nixlinco";
       pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
-      # Hosts: you can add multiple hosts here; each host may override `system`.
-      hosts = [
-        { hostname = "aspire7"; stateVersion = homeStateVersion; system = defaultSystem; }
-        { hostname = "mini7"; stateVersion = homeStateVersion; system = defaultSystem; }
-      ];
-
-      # Build a NixOS system for a host. The `system` argument defaults to `defaultSystem`.
-      makeSystem = { hostname, stateVersion, system ? defaultSystem }:
-        nixpkgs.lib.nixosSystem {
-          system = system;
-          # `specialArgs` are visible to modules under ./nixos/*. If you prefer, pass only the
-          # specific inputs your modules need instead of the whole `inputs` set.
-          specialArgs = {
-            inherit inputs stateVersion hostname user;
-          };
-          modules = [
-            inputs.disko.nixosModules.disko
-            ./hosts/${hostname}
-            ./nixos
-          ];
-        };
-    in
-    {
-      # Export the packages set for the default system so other flakes can import it if needed.
-      packages = {
-        "${defaultSystem}" = pkgs;
+      # Build a NixOS system for a host.
+      makeSystem = { hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs stateVersion hostname user; };
+        modules = [
+          inputs.disko.nixosModules.disko
+          ./hosts/${hostname}
+          ./nixos
+        ];
       };
 
-      nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
-        configs // {
-          "${host.hostname}" = makeSystem {
-            inherit (host) hostname stateVersion system;
-          };
-        }) {} hosts;
-
-      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
+      # Build a Home Manager configuration for a host.
+      makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit nixpkgs home-manager homeStateVersion user hostname; };
+        modules = [ ./home-manager/${hostname}/home.nix ];
+      };
+    in
+    {
+      nixosConfigurations = {
+        aspire7 = makeSystem { hostname = "aspire7"; stateVersion = homeStateVersion; };
+        mini7   = makeSystem { hostname = "mini7";   stateVersion = homeStateVersion; };
+      };
 
-        # Pass explicit inputs to the Home Manager modules (prefer this to passing `inputs`).
-        extraSpecialArgs = {
-          inherit nixpkgs home-manager homeStateVersion user hostname;
-        };
-
-        modules = [
-          ./home-manager/home.nix
-        ];
+      homeConfigurations = {
+        "aspire7" = makeHome { user = "linco02"; hostname = "aspire7"; };
+        "mini7" = makeHome { user = "linco02"; hostname = "mini7"; };
       };
     };
 }
