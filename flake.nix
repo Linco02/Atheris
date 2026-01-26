@@ -34,7 +34,7 @@
       pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
       # Build a NixOS system for a host.
-      makeSystem = { hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
+      makeSystem = { user, hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs stateVersion hostname user; };
         modules = [
