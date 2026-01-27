@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       my-disk = {
-        device = "/dev/vda"; # TODO замінить vda на sda як перенесу на фізичний диск
+        device = "/dev/nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
