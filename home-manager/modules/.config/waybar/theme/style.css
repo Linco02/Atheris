@@ -22,16 +22,24 @@ window#waybar {
 #network,
 #language {
   background-color: @background;
-  border: 1px solid @foreground;
+  border: 2px solid @foreground;
   border-top: 0;
-  border-bottom-right-radius: 10;
-  border-bottom-left-radius: 10;
+  border-bottom-right-radius: 15;
+  border-bottom-left-radius: 15;
+}
+
+#taskbar.empty {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-top: 0;
+  border-bottom-right-radius: 15;
+  border-bottom-left-radius: 15;
 }
 
 #toolbox,
 #workspaces,
 #taskbar {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 #monitors,
@@ -39,7 +47,7 @@ window#waybar {
 #battery,
 #network,
 #language {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 /* ELEMENT */
@@ -62,8 +70,8 @@ window#waybar {
   color: @foreground;
   background-color: @background;
   border-top: 2px solid @background;
-  border-bottom-right-radius: 10;
-  border-bottom-left-radius: 10;
+  border-bottom-right-radius: 15;
+  border-bottom-left-radius: 15;
 }
 
 #custom-powermenu:hover,
