@@ -6,6 +6,7 @@ in
 {
   imports = [
     "${modulesPath}/boot.nix"
+    "${modulesPath}/disco.nix"
     "${modulesPath}/hardware.nix"
     "${modulesPath}/homemanager.nix"
     "${modulesPath}/network.nix"
@@ -36,11 +37,5 @@ in
       pkgs.xdg-desktop-portal-hyprland
     ];
     config.common.default = "*";
-  };
-
-  # Налаштування віртуалізації
-  virtualisation = { 
-    docker.enable = true;
-    libvirtd.enable = true;
   };
 }

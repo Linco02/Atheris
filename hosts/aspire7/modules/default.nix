@@ -1,6 +1,6 @@
 {
   imports = [
-    ./docker.nix
+    ./virtualisation.nix
     ./hardware.nix
     ./nvidia.nix
     ./programs.nix

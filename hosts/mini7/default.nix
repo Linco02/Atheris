@@ -1,6 +1,5 @@
 {
   imports = [
     ./modules
-    ./disco.nix
   ];
 }
