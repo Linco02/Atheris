@@ -1,6 +1,6 @@
 {
   imports = [
-    ./thunar.nix
-    ./vscode.nix
+    # ./thunar.nix
+    # ./vscode.nix
   ];
 }

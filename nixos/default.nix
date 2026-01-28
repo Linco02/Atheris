@@ -1,23 +1,9 @@
 { config, pkgs, stateVersion, ... }:
-let
-  modulesPath = ./modules;
-  pkgsPath = ./pkgs;
-in
+
 {
   imports = [
-    "${modulesPath}/boot.nix"
-    "${modulesPath}/disco.nix"
-    "${modulesPath}/hardware.nix"
-    "${modulesPath}/homemanager.nix"
-    "${modulesPath}/network.nix"
-    "${modulesPath}/programs.nix"
-    "${modulesPath}/services.nix"
-    "${modulesPath}/timezone.nix"
-    "${modulesPath}/user.nix"
-
-    "${pkgsPath}/developer.nix"
-    "${pkgsPath}/shell.nix"
-    "${pkgsPath}/utils.nix"
+    ./modules
+    ./pkgs
   ];
 
   # Увімкнення експериментальних функцій nix

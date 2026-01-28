@@ -1,4 +1,4 @@
-{ pkgs, homeStateVersion, user, hostname, ... }:
+{ pkgs, config, homeStateVersion, user, hostname, ... }:
 
 {
   home = {
@@ -7,5 +7,6 @@
     stateVersion = homeStateVersion;
   };
 
+  nixpkgs.config.allowUnfree = true;
   services.dunst.enable = true;
 }

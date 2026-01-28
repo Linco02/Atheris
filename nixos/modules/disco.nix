@@ -14,10 +14,11 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
               };
             };
             swap = {
-              size = "1G";
+              size = "8G";
               content = {
                 type = "swap";
                 resumeDevice = true;

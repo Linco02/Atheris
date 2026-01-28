@@ -1,5 +1,5 @@
 {
-  description = "Linco-Flake NIXSYSTEM";
+  description = "Atheris-Flake by linco02";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
