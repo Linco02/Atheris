@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  # Дозволяємо лише необхідні драйвери
-  services.xserver.videoDrivers = [ "nvidia" ];
 
-  boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "nvidia" "amdgpu" ]; # Тепер обидва
+
+  # Дозволяємо лише необхідні драйвери
+  # services.xserver.videoDrivers = [ "nvidia" ];
+
+  # boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -23,13 +27,14 @@
     };
   };
 
-  # Змінні оточення для Hyprland + NVIDIA
   environment.sessionVariables = {
+    # Вказуємо Hyprland використовувати інтегровану карту для виводу, 
+    # а NVIDIA лише для важких обчислень
+    WLR_DRM_DEVICES = "/dev/dri/card0:/dev/dri/card1";
+  
+    # Обов'язково для вашої 1650
+    WLR_NO_HARDWARE_CURSORS = "1";
     LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1"; # Без цього на 1650 часто чорний екран
-    NVD_BACKEND = "direct"; # Покращує роботу відео
   };
 }
