@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./virtualisation.nix
+    ./virtualisation.nix
     ./hardware.nix
     ./nvidia.nix
     ./programs.nix
