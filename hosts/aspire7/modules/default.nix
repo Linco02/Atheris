@@ -2,7 +2,7 @@
   imports = [
     ./virtualisation.nix
     ./hardware.nix
-    # ./nvidia.nix
+    ./nvidia.nix
     ./programs.nix
   ];
 }
