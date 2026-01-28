@@ -4,6 +4,7 @@
   programs = {
     fish.enable = true;
     firefox.enable = true;
+    hyprland.enable = true;
 
     thunar = {
       enable = true;
