@@ -3,6 +3,6 @@
     # ./virtualisation.nix
     ./hardware.nix
     ./nvidia.nix
-    # ./programs.nix
+    ./programs.nix
   ];
 }
