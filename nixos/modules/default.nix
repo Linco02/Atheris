@@ -1,6 +1,5 @@
 {
   imports = [
-    ./modules
     ./boot.nix
     ./disco.nix
     ./hardware.nix
