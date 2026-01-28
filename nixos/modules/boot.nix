@@ -17,11 +17,11 @@
         # gfxpayloadEfi = "keep";
       };
     };
-  };
 
-  initrd.availableKernelModules = [ 
-    "nvme"
-    "ahci" 
-    "usbhid" 
-  ];
+    initrd.availableKernelModules = [ 
+      "nvme"
+      "ahci" 
+      "usbhid" 
+    ];
+  };
 }
