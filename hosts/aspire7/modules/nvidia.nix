@@ -1,40 +1,28 @@
 { config, pkgs, ... }:
 
 {
+  # 1. Спробуємо інше ядро (LTS зазвичай стабільніше для ноутбуків)
+  boot.kernelPackages = pkgs.linuxPackages_latest; # Або pkgs.linuxPackages_6_6 (LTS)
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  services.xserver.videoDrivers = [ "nvidia" "amdgpu" ]; # Тепер обидва
+  # 2. Додаємо параметри для виправлення ініціалізації AMD
+  boot.kernelParams = [ 
+    "amdgpu.noretry=0" 
+    "initcall_blacklist=simpledrm_platform_driver_init" # Вимикаємо конфліктний simpledrm
+    "nvidia_drm.modeset=1"
+    "nvidia_drm.fbdev=1"
+  ];
 
-  # Дозволяємо лише необхідні драйвери
-  # services.xserver.videoDrivers = [ "nvidia" ];
+  # 3. ПЕРЕКОНАЙТЕСЯ, що прошивка завантажується
+  hardware.enableAllFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
-  # boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
+  # 4. Виправляємо порядок драйверів
+  services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    open = false; # Для 1650 краще тримати false (пропрієтарний драйвер стабільніший)
-    nvidiaSettings = true;
-    # Використовуємо стабільну гілку
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      offload.enable = true;
-      offload.enableOffloadCmd = true;
-      # ПЕРЕВІРТЕ ЦІ ID ЩЕ РАЗ ЧЕРЕЗ LSPCI!
-      nvidiaBusId = "PCI:1:0:0"; 
-      amdgpuBusId = "PCI:5:0:0";
-    };
-  };
-
+  # 5. Обов'язково додаємо це для Hyprland + NVIDIA
   environment.sessionVariables = {
-    # Вказуємо Hyprland використовувати інтегровану карту для виводу, 
-    # а NVIDIA лише для важких обчислень
-    WLR_DRM_DEVICES = "/dev/dri/card0:/dev/dri/card1";
-  
-    # Обов'язково для вашої 1650
     WLR_NO_HARDWARE_CURSORS = "1";
-    LIBVA_DRIVER_NAME = "nvidia";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    # Змушуємо Hyprland бачити обидві карти, але AMD як основну для екрана
+    WLR_DRM_DEVICES = "/dev/dri/card0:/dev/dri/card1";
   };
 }
