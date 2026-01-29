@@ -27,8 +27,8 @@
       {
         name = "jsoncrack-vscode";
         publisher = "aykutsarac";
-        version = "3.0.0";
-        sha256 = "sha256-Ob7zs04aYsL0xdvMCZybWEcrZmo96Vhoo7Y63gw0If8=";
+        version = "5.0.0";
+        sha256 = "sha256-SwgUm6rIEp15Lc86UHTD5gVHrs9Mwbcwsb7LL5SGVy4=";
       }
 
       {
@@ -49,56 +49,56 @@
         name = "python-environment-manager";
         publisher = "donjayamanne";
         version = "1.2.7";
-        sha256 = "sha256-6KzT0/owPLtYdLmi28HujJHwjovYBByIqIvlTpmPpaM=";
+        sha256 = "sha256-w3csu6rJm/Z6invC/TR7tx6Aq5DD77VM62nem8/QMlg=";
       }
 
       {
         name = "python-extension-pack";
         publisher = "donjayamanne";
         version = "1.7.0";
-        sha256 = "sha256-EMd5ejkXUaaTxtSM2oTauvpW9HsZ2PFAnNUzQEshINc=";
+        sha256 = "sha256-ewOw6nMVzNSYddLcCBGKVNvllztFwhEtncE2RFeFcOc=";
       }
 
       {
         name = "drawfolderstructure";
         publisher = "jmkrivocapich";
-        version = "1.4.5";
-        sha256 = "sha256-6KljHuk7Vc4WKAwRLze1HTybCnM7S7proDFZbue3oQg=";
+        version = "1.4.6";
+        sha256 = "sha256-oQblpTx1zMQGlKLb5X55zLITlp1y41m/1PReAobl96Y=";
       }
 
       {
         name = "vscode-python-envs";
         publisher = "ms-python";
-        version = "1.11.12751011";
-        sha256 = "sha256-aYpd8ROwxx5S2H7Sp7dcVO8suNvvQz8N+qivDQpLJ1Q=";
+        version = "1.17.10261015";
+        sha256 = "sha256-jzawlB4fKNvu4hRJ+pMy1rO0KRSrDdY6egAwcuPc/64=";
       }
 
       {
         name = "file-and-folder-icons";
         publisher = "nextbook";
         version = "1.0.4";
-        sha256 = "sha256-hGGep/sdXpnNNoLrI6cD8aia3TZ8PcBU6j28TzAOtLg=";
+        sha256 = "sha256-PzEiRmY1Mt3BNRpPiwk9vFW+qIKhQ3jGwjg2hwrNRPc=";
       }
 
       {
         name = "qt-core";
         publisher = "theqtcompany";
-        version = "1.9.0";
-        sha256 = "sha256-5Q2qT1He7ec+rOK2G4C2sXTRgWIs1NJdQepwm6d4U9g=";
+        version = "1.11.1";
+        sha256 = "sha256-PQmNWezNYVGGNFAJrlMRhXHe3o0XV6LxE2omU1mqZM0=";
       }
 
       {
         name = "qt-qml";
         publisher = "theqtcompany";
-        version = "1.9.0";
-        sha256 = "sha256-r15cKAnPWcu4q1In/IAr+VW6dgTtP4QqeJpcYu4r4IM=";
+        version = "1.11.1";
+        sha256 = "sha256-cWS3xUAbPiH/Mqohs0reWNyfMLiSO7tXdIp7/GbTysw=";
       }
 
       {
         name = "vscode-todo-highlight";
         publisher = "wayou";
         version = "1.0.5";
-        sha256 = "sha256-CGWXK7qnQhZsOWJBVXxXqJCYhHZM+FqL66Lt1g/uhLk=";
+        sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
       }
 
       {
@@ -125,11 +125,11 @@
       {
         name = "hyprlang-vscode";
         publisher = "fireblast";
-        version = "0.0.1";
+        version = "0.0.3";
         sha256 = "sha256-lSMihMIue0qu9+97EgT5dqjbzsey0TLZDpJby+Piip4=";
       }
 
-      { #
+      {
         name = "vsc-python-indent";
         publisher = "kevinrose";
         version = "1.21.0";
