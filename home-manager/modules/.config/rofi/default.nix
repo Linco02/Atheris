@@ -1,9 +1,9 @@
-{ inputs, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
 	programs.rofi = {
 		enable = true;
-		package = pkgs.rofi-wayland;
+		package = pkgs.rofi;
 		plugins = with pkgs; [
 			rofi-calc
 			pkgs.rofi-emoji
