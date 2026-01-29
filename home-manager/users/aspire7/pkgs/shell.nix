@@ -11,6 +11,12 @@
     hyprlock
     waybar
 
+    # Thunar та плагіни
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    xfce.thunar-media-tags-plugin
+
     # Мультимедійні програми
     vlc
     mpv

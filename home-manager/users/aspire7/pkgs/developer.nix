@@ -3,7 +3,7 @@
 {
   # Програмування
   home.packages = with pkgs; [
-    vscode
+    vscodium
     neovim
 
     python3

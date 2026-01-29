@@ -3,8 +3,8 @@
 {
   programs.vscode = {
     enable = true;
-    # package = pkgs.vscodium;
-    profiles.default.extensions = (with pkgs.vscode-extensions; [
+    package = pkgs.vscodium;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       arrterian.nix-env-selector
       batisteo.vscode-django
       bbenoist.nix
@@ -23,7 +23,7 @@
       visualstudioexptteam.vscodeintellicode
       wholroyd.jinja
       zainchen.json
-    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "jsoncrack-vscode";
         publisher = "aykutsarac";
