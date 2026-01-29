@@ -31,8 +31,7 @@
     unrar
     sassc
     pavucontrol
-    # flatpak
-    # gnome-software
+    gnome-software
 
     gdk-pixbuf
     poppler
