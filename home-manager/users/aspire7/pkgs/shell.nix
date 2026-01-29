@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     hellwal
     papirus-icon-theme
+    material-cursors
 
     # Налаштування зовнішнього вигляду
     hyprpaper
@@ -30,7 +31,5 @@
     nwg-look
     gnome-shell
     glance
-    rofi
-
   ];  
 }

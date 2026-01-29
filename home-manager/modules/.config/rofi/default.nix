@@ -6,13 +6,13 @@
 		package = pkgs.rofi;
 		plugins = with pkgs; [
 			rofi-calc
-			pkgs.rofi-emoji
+			rofi-emoji
 		];
 
 		# Змінні
 		extraConfig = {
 			modi = "drun,filebrowser";
-			combi-modi = "drun,filebrowser";
+			combi-modi = "drun,filebrowser,calc,emoji";
 			show-icons = true;
 			icon-theme = "Papirus-Dark";
 			display-drun = "󰊗  Apps";
@@ -24,14 +24,15 @@
 		theme = let
 			inherit (config.lib.formats.rasi) mkLiteral;
 		in {
-			"@import" = "/home/nixlinco/.cache/hellwal/rofi.rasi";
+			"@import" = "~/.cache/hellwal/rofi.rasi";
 
 			"*" = {
 				font = "JetBrainsMono Nerd Font 16";
 			};
 
 			"window" = {
-				border = mkLiteral "1px";
+				border = mkLiteral "2px";
+				border-radius = mkLiteral "15px";
 				padding = mkLiteral "20px";
 			};
 

@@ -11,6 +11,13 @@
       # Load color scheme from wallpaper
       source = "~/.cache/hellwal/hyprland-colors.conf";
 
+      # курсор
+      # env = [
+      #   "XCURSOR_THEME, material-cursors"
+      #   "XCURSOR_SIZE,16"
+      #   "HYPRCURSOR_SIZE,16"
+      # ];
+
       # Monitor configuration
       # monitor = [
       #   "Monitor Virtual-1,1920x1080@60,0x0,1"
@@ -56,9 +63,9 @@
       # GENERAL WINDOW & LAYOUT SETTINGS
       # ============================================================
       general = {
-        gaps_in = 2;
-        gaps_out = 5;
-        border_size = 1;
+        gaps_in = 5;
+        gaps_out = 10;
+        border_size = 2;
         "col.active_border" = "$foreground";
         resize_on_border = false;
         allow_tearing = false;
