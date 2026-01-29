@@ -4,7 +4,7 @@ mkdir assets/wallpaper
 mkdir assets/hellwal
 
 # копіювання шпалер
-cp ../assets/wallpaper/* ~/assets/wallpaper/
+cp -r ../assets/wallpaper/* ~/assets/wallpaper/
 
 # завантаження hellwal
 nix-shell -p gcc imlib2 xorg.libX11 --run "
