@@ -1,4 +1,3 @@
-@import "animation.css";
 @import url("../../.cache/hellwal/waybar-colors.css");
 
 * {
@@ -70,8 +69,8 @@ window#waybar {
   color: @foreground;
   background-color: @background;
   border-top: 2px solid @background;
-  border-bottom-right-radius: 15;
-  border-bottom-left-radius: 15;
+  border-bottom-right-radius: 10;
+  border-bottom-left-radius: 10;
 }
 
 #custom-powermenu:hover,
