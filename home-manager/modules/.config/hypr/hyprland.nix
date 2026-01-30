@@ -50,7 +50,6 @@
         "/nix/store/fxd030lwhc81ajzxbvxcj1y0p8mgf52q-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
         "hyprpaper"
         "waypaper --random"
-        "waybar &"
         # "sh ~/Documents/Scripts/change-theme.sh"
         # "sleep 0.5 && python ~/Documents/Scripts/init-monitor.py"
       ];
@@ -188,7 +187,7 @@
         "$mainMod, Q, exec, $terminal"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, R, exec, $menu"
-        "$mainMod, F, exec, firefox"
+        "$mainMod, F, exec, flatpak run app.zen_browser.zen"
         "$mainMod, L, exec, hyprlock"
         "$mainMod, W, exec, waypaper"
         ", Print, exec, hyprshot -m region -o ~/Pictures/screanshoot/"
