@@ -1,6 +1,6 @@
 {
   imports = [
-    ../../modules
+    ./.config
     ./modules
     ./pkgs
   ];
