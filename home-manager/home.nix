@@ -16,8 +16,8 @@
       hyprcursor.enable = true;
       sway.enable = true;
 
-      size = 30;
-      hyprcursor.size = 30;
+      size = 24;
+      hyprcursor.size = 24;
     };
   };
 
