@@ -22,10 +22,10 @@
 
       monitor = ", preferred, auto, 1";
 
-      env = [
-        "XCURSOR_SIZE,28"
-        "HYPRCURSOR_SIZE,28"
-      ];
+      # env = [
+      #   "XCURSOR_SIZE,28"
+      #   "HYPRCURSOR_SIZE,28"
+      # ];
 
       # Startup commands executed on Hyprland launch
       exec-once = [
@@ -40,6 +40,7 @@
       # ============================================================
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
+      "$browser" = "firefox";
       "$fileManager" = "thunar";
       "$menu" = "rofi -show drun";
 
@@ -168,7 +169,7 @@
         "$mainMod, Q, exec, $terminal"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, R, exec, $menu"
-        "$mainMod, F, exec, flatpak run app.zen_browser.zen"
+        "$mainMod, F, exec, $browser"
         "$mainMod, L, exec, hyprlock"
         "$mainMod, W, exec, waypaper"
         ", Print, exec, hyprshot -m region -o ~/Pictures/screanshoot/"
