@@ -1,7 +1,8 @@
 {
   imports = [
     ./git.nix
-    ./pointerCursor.nix
+    ./gtk.nix
+    ./qt.nix
     ./vscode.nix
   ];
   
