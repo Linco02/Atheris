@@ -23,18 +23,15 @@
       monitor = ", preferred, auto, 1";
 
       env = [
-        # "HYPRCURSOR_THEME,Bibata-Modern-Ice"
         "XCURSOR_SIZE,28"
         "HYPRCURSOR_SIZE,28"
       ];
 
       # Startup commands executed on Hyprland launch
       exec-once = [
-        # "hyprctl setcursor Bibata-Modern-Ice 24"
         "/nix/store/fxd030lwhc81ajzxbvxcj1y0p8mgf52q-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
         "hyprpaper"
         "waypaper --random"
-        # "sh ~/Documents/Scripts/change-theme.sh"
         # "sleep 0.5 && python ~/Documents/Scripts/init-monitor.py"
       ];
 
