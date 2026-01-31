@@ -47,5 +47,7 @@
         "usbhid" 
       ];
     };
+
+    supportedFilesystems = [ "exfat" "ntfs" ];
   };
 }

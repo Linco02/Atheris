@@ -16,7 +16,7 @@
     docker-compose
     qemu
     jstest-gtk
-    nwg-displays
+    # nwg-displays
     neohtop
     libreoffice
     xarchiver

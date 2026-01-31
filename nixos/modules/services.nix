@@ -7,6 +7,7 @@
 
     # Налаштування файлової системи та мініатюр
     gvfs.enable = true;
+    polkit.enable = true;
     udisks2.enable = true;
     tumbler.enable = true;
 

@@ -4,6 +4,7 @@
   programs = {
     steam.enable = true;
     gamemode.enable = true;
+    virt-manager.enable = true;
 
     java = {
       enable = true;

@@ -69,8 +69,8 @@ window#waybar {
   color: @foreground;
   background-color: @background;
   border-top: 2px solid @background;
-  border-bottom-right-radius: 10;
-  border-bottom-left-radius: 10;
+  border-bottom-right-radius: 13;
+  border-bottom-left-radius: 13;
 }
 
 #custom-powermenu:hover,
