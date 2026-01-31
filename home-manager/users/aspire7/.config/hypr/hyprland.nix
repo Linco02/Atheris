@@ -1,29 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  # home.pointerCursor = 
-  #   let 
-  #     getFrom = url: hash: name: {
-  #         gtk.enable = true;
-  #         x11.enable = true;
-  #         name = name;
-  #         size = 48;
-  #         package = 
-  #           pkgs.runCommand "moveUp" {} ''
-  #             mkdir -p $out/share/icons
-  #             ln -s ${pkgs.fetchzip {
-  #               url = url;
-  #               hash = hash;
-  #             }} $out/share/icons/${name}
-  #         '';
-  #       };
-  #   in
-  #     getFrom 
-  #       "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Pop.tar.gz"
-  #       "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
-  #       "Fuchsia-Pop";
-
-
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -45,8 +22,15 @@
 
       monitor = ", preferred, auto, 1";
 
+      env = [
+        # "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+        "XCURSOR_SIZE,28"
+        "HYPRCURSOR_SIZE,28"
+      ];
+
       # Startup commands executed on Hyprland launch
       exec-once = [
+        # "hyprctl setcursor Bibata-Modern-Ice 24"
         "/nix/store/fxd030lwhc81ajzxbvxcj1y0p8mgf52q-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
         "hyprpaper"
         "waypaper --random"

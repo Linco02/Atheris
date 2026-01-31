@@ -4,7 +4,8 @@
   home.packages = with pkgs; [
     hellwal
     papirus-icon-theme
-    material-cursors
+    # material-cursors
+    # bibata-cursors
 
     # Налаштування зовнішнього вигляду
     hyprpaper
