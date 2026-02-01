@@ -206,7 +206,7 @@
       #network,
       #language {
         background-color: @background;
-        border: 2px solid @foreground;
+        border: 2px solid @color2;
         border-top: 0;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
