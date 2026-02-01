@@ -7,6 +7,9 @@
     # material-cursors
     # bibata-cursors
 
+    kdePackages.qt6ct
+    kdePackages.qt5compat
+
     # Налаштування зовнішнього вигляду
     hyprpaper
     waypaper
@@ -14,6 +17,7 @@
     waybar
 
     # Мультимедійні програми
+    eog
     vlc
     mpv
     ffmpeg
@@ -26,5 +30,7 @@
     nwg-look
     gnome-shell
     glance
+    
+    python3
   ];  
 }

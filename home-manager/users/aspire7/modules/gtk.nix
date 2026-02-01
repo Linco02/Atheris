@@ -1,9 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 
 {
   gtk = {
     enable = true;
     colorScheme = "dark";
+
+    # gtk3.extraCss = ''
+    #   @import url("file:///home/${user}/.cache/hellwal/gtk.css");
+    # '';
 
     cursorTheme = {
       name = "Bibata-Modern-Ice";

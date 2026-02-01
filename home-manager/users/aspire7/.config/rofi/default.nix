@@ -11,8 +11,8 @@
 
 		# Змінні
 		extraConfig = {
-			modi = "drun,filebrowser";
-			combi-modi = "drun,filebrowser,calc,emoji";
+			modi = "drun,filebrowser,emoji,calc";
+			combi-modi = "drun,filebrowser,emoji,calc";
 			show-icons = true;
 			icon-theme = "Papirus-Dark";
 			display-drun = "󰊗  Apps";

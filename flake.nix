@@ -33,6 +33,9 @@
       defaultUser = "linco02";
       pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
+      # devShell
+      devShellTools = import ./nixos/devShell.nix { inherit pkgs; };
+
       # Build a NixOS system for a host.
       makeSystem = { user, hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
         inherit system;
@@ -64,6 +67,16 @@
       homeConfigurations = {
         "aspire7" = makeHome { user = defaultUser; hostname = "aspire7"; };
         "mini7" = makeHome { user = defaultUser; hostname = "mini7"; };
+      };
+
+      devShells.${defaultSystem}.default = pkgs.mkShell {
+        nativeBuildInputs = devShellTools.tools;
+        buildInputs = devShellTools.libs ++ devShellTools.editors;
+
+        shellHook = ''
+          echo "Ласкаво просимо в devShell!"
+          echo "ЖОПА БОЛЬ ПОЧИНАЄТЬСЯ"
+        '';
       };
     };
 }

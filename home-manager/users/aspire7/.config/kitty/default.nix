@@ -10,7 +10,7 @@
       font_family      JetBrains Mono
       font_size 14.0
       window_padding_width 10
-      background_opacity 0.75
+      background_opacity 0.3
     '';
   };
 }

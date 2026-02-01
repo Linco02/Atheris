@@ -1,6 +1,6 @@
 {
   imports = [
-    ./developer.nix
+    # ./developer.nix
     ./fonts.nix
     ./game.nix
     ./shell.nix
