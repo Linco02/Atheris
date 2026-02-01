@@ -34,7 +34,7 @@
       pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
       # devShell
-      devShellTools = import ./shell.nix { inherit pkgs; };
+      developer = import ./nixos/devShell.nix { inherit pkgs; };
 
       # Build a NixOS system for a host.
       makeSystem = { user, hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
@@ -70,12 +70,11 @@
       };
 
       devShells.${defaultSystem}.default = pkgs.mkShell {
-        nativeBuildInputs = devShellTools.tools;
-        buildInputs = devShellTools.libs ++ devShellTools.editors;
+        nativeBuildInputs = developer.tools;
+        buildInputs = developer.libs ++ developer.editors;
 
         shellHook = ''
-          echo "Ласкаво просимо в devShell!"
-          echo "ЖОПА БОЛЬ ПОЧИНАЄТЬСЯ"
+          echo "Режим devShell!"
         '';
       };
     };
