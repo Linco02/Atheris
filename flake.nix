@@ -34,7 +34,7 @@
       pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
       # devShell
-      devShellTools = import ./nixos/devShell.nix { inherit pkgs; };
+      devShellTools = import ./shell.nix { inherit pkgs; };
 
       # Build a NixOS system for a host.
       makeSystem = { user, hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
