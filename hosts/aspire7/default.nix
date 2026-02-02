@@ -1,5 +1,6 @@
 {
   imports = [
+    ./hardware-configuration.nix
     ./hardware.nix
     ./nvidia.nix
     ./programs.nix

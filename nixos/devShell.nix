@@ -4,6 +4,10 @@
   # Інструменти
   tools = with pkgs; [
     gcc
+    gcc-wrapper
+    gdb
+    g++
+    g++-wrapper
     scdoc
     pkg-config
     meson
@@ -19,6 +23,8 @@
     python3Packages.pygobject3
     gobject-introspection
     quickshell
+    qt6.qtbase
+    qt6.wrapQtAppsHook
   ];
 
   # Редактори та IDE

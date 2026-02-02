@@ -42,7 +42,6 @@
         specialArgs = { inherit inputs stateVersion hostname user; };
         modules = [
           inputs.disko.nixosModules.disko
-          /etc/nixos/hardware-configuration.nix
           ./hosts/${hostname}
           ./nixos
         ];
