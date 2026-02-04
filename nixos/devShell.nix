@@ -4,10 +4,8 @@
   # Інструменти
   tools = with pkgs; [
     gcc
-    gcc-wrapper
     gdb
-    g++
-    g++-wrapper
+    gnumake
     scdoc
     pkg-config
     meson
@@ -18,13 +16,25 @@
 
   # Бібліотеки для розробки
   libs = with pkgs; [
+    (python3.withPackages (ps: with ps; [
+      debugpy # для дебагу
+      pyside6
+      python-lsp-server
+      pip
+      pygobject3
+    ]))
+
     gtk3
     gtk4
-    python3Packages.pygobject3
     gobject-introspection
     quickshell
     qt6.qtbase
     qt6.wrapQtAppsHook
+    # qt6.full
+    # qt5.full
+
+    makeWrapper
+    bashInteractive
   ];
 
   # Редактори та IDE

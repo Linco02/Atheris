@@ -38,5 +38,6 @@
     ffmpegthumbnailer
 
     brightnessctl
+    lm_sensors
   ];
 }

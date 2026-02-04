@@ -154,6 +154,11 @@
         disable_hyprland_logo = false;
       };
 
+      windowrulev2 = [
+        "float, class:^(org.quickshell)$"
+        "center, class:^(org.quickshell)$"
+      ];
+
       # ============================================================
       # KEYBINDINGS - Regular (bind)
       # ============================================================
