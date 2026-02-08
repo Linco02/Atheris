@@ -7,5 +7,6 @@
     exfatprogs
     os-prober
     dnsmasq
+    spice-gtk
   ];
 }
