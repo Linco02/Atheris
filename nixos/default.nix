@@ -23,7 +23,6 @@
       pkgs.xdg-desktop-portal-hyprland
     ];
     config = {
-      # hyprland.preferred = [ "hyprland" "gtk" ];
       common.default = "*";
     };
   };

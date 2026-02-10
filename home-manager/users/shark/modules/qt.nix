@@ -3,10 +3,11 @@
 {
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
+    platformTheme.name = "gtk";
+    style.name = "kvantum";  
   };
 
   home.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_QPA_PLATFORM = "wayland";
   };
 }
