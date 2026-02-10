@@ -39,7 +39,5 @@
 
     brightnessctl
     lm_sensors
-
-    woeusb-ng
   ];
 }
