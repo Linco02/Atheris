@@ -25,7 +25,7 @@
     };
 
     nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions/fd5c5549692ff4d2dbee1ab7eea19adc2f97baeb";
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -55,7 +55,7 @@
       # Build a Home Manager configuration for a host.
       makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixpkgs home-manager homeStateVersion user hostname; };
+        extraSpecialArgs = { inherit nixpkgs inputs home-manager homeStateVersion user hostname; };
         modules = [
           ./home-manager/home.nix
           ./home-manager/users/${hostname}

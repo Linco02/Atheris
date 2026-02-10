@@ -1,7 +1,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./hardware
+    ./hardware.nix
     ./programs.nix
     ./security.nix
     ./services.nix
