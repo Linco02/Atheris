@@ -3,6 +3,7 @@ mkdir ~/assets
 mkdir ~/assets/wallpaper
 mkdir ~/assets/scripts
 mkdir ~/.config/hellwal
+mkdir ~/.config/waypaper
 
 # копіювання шпалер
 cp ../wallpaper/* ~/assets/wallpaper/
