@@ -3,7 +3,7 @@ mkdir ~/assets
 mkdir ~/assets/wallpaper
 mkdir ~/assets/scripts
 mkdir ~/.config/hellwal
-mkdir ~/.config/waypaper
+
 
 # копіювання шпалер
 cp ../wallpaper/* ~/assets/wallpaper/
@@ -12,7 +12,7 @@ cp ../wallpaper/* ~/assets/wallpaper/
 cp -r ./ ~/assets/scripts/
 
 # конфіг для waypaper
-cp ../waypaper/* ~/.config/waypaper/
+cp -r ../waypaper ~/.config/
 
 # завантаження hellwal
 nix-shell -p gcc imlib2 xorg.libX11 --run "
