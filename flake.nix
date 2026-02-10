@@ -61,11 +61,13 @@
       nixosConfigurations = {
         aspire7 = makeSystem { user = defaultUser; hostname = "aspire7"; stateVersion = homeStateVersion; };
         mini7   = makeSystem { user = defaultUser; hostname = "mini7";   stateVersion = homeStateVersion; };
+        shark = makeSystem { user = defaultUser; hostname = "shark";   stateVersion = homeStateVersion; };
       };
 
       homeConfigurations = {
         "aspire7" = makeHome { user = defaultUser; hostname = "aspire7"; };
         "mini7" = makeHome { user = defaultUser; hostname = "mini7"; };
+        "shark" = makeHome { user = defaultUser; hostname = "shark"; };
       };
 
       devShells.${defaultSystem}.default = pkgs.mkShell {
