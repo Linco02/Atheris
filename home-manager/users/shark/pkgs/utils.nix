@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     youtube-music
     telegram-desktop
-    gparted
     appimage-run
     vesktop
     deluge

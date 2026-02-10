@@ -24,19 +24,9 @@
       pygobject3
     ]))
 
-    gtk3
-    gtk4
     gobject-introspection
-    quickshell
     qt6.qtbase
     qt6.wrapQtAppsHook
-    qt6.qtimageformats
-    kdePackages.qt6ct
-    kdePackages.qtsvg
-    kdePackages.qtimageformats
-    # qt6.full
-    # qt5.full
-
     makeWrapper
     bashInteractive
   ];

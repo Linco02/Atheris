@@ -3,7 +3,10 @@
 {
   qt = {
     enable = true;
-    style.package = pkgs.adwaita-qt;
-    style.name = "adwaita-dark";
+    platformTheme.name = "qtct";
+  };
+
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "qt5ct";
   };
 }

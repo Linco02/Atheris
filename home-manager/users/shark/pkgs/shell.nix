@@ -32,5 +32,14 @@
     glance
     
     python3
+
+    quickshell
+    gtk3
+    gtk4
+    qt6.qtimageformats
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
+    kdePackages.qtsvg
+    kdePackages.qtimageformats
   ];  
 }
