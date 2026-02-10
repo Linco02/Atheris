@@ -1,5 +1,6 @@
 {
   imports = [
+    ./disco.nix
     ./hardware-configuration.nix
     ./hardware.nix
     ./nvidia.nix

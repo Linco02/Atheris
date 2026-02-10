@@ -1,7 +1,6 @@
 {
   imports = [
     ./boot.nix
-    ./disco.nix
     ./hardware.nix
     ./home-manager.nix
     ./network.nix
