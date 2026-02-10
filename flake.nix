@@ -23,9 +23,14 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions/fd5c5549692ff4d2dbee1ab7eea19adc2f97baeb";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, waybar, quickshell, disko, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, waybar, quickshell, disko, nix-vscode-extensions, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
