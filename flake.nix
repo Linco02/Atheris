@@ -58,6 +58,7 @@
         extraSpecialArgs = { inherit nixpkgs inputs home-manager homeStateVersion user hostname; };
         modules = [
           ./home-manager/home.nix
+          ./home-manager/users/common
           ./home-manager/users/${hostname}
         ];
       };
@@ -71,7 +72,6 @@
 
       homeConfigurations = {
         "aspire7" = makeHome { user = defaultUser; hostname = "aspire7"; };
-        "mini7" = makeHome { user = defaultUser; hostname = "mini7"; };
         "shark" = makeHome { user = defaultUser; hostname = "shark"; };
       };
 

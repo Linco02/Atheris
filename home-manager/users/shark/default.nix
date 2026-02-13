@@ -1,7 +1,5 @@
 {
   imports = [
-    ./config
-    ./modules
     ./pkgs
   ];
 }

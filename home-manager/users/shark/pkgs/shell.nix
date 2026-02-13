@@ -4,8 +4,6 @@
   home.packages = with pkgs; [
     hellwal
     papirus-icon-theme
-    # material-cursors
-    # bibata-cursors
 
     kdePackages.qt6ct
     kdePackages.qt5compat
