@@ -11,10 +11,7 @@
     kdePackages.qt5compat
 
     # Налаштування зовнішнього вигляду
-    hyprpaper
-    waypaper
     hyprlock
-    waybar
 
     # Мультимедійні програми
     eog
