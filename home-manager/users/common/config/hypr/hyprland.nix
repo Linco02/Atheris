@@ -14,17 +14,7 @@
       source = "~/.cache/hellwal/hyprland-colors.conf";
 
       # Monitor configuration
-      monitor = [
-        "eDP-1,1920x1080@60,0x0,1"
-        "HDMI-A-1,2560x1440@144,1920x0,1"
-      ];
-
-      # monitor = ", preferred, auto, 1";
-
-      # env = [
-      #   "XCURSOR_SIZE,28"
-      #   "HYPRCURSOR_SIZE,28"
-      # ];
+      monitor = ", preferred, auto, 1";
 
       # Startup commands executed on Hyprland launch
       exec-once = [

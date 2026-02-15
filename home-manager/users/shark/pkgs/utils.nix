@@ -38,5 +38,7 @@
 
     brightnessctl
     lm_sensors
+
+    openrgb
   ];
 }
