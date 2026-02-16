@@ -4,5 +4,5 @@
     extraModprobeConfig = ''
       options it87 force_id=0x8628
     '';
-  }
+  };
 }
