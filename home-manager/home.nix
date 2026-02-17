@@ -24,6 +24,4 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
-  services.dunst.enable = true;
 }
