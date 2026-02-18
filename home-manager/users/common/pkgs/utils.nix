@@ -40,5 +40,6 @@
     lm_sensors
 
     openrgb
+    libnotify
   ];
 }

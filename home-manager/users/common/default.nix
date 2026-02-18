@@ -2,5 +2,6 @@
   imports = [
     ./config
     ./modules
+    ./pkgs
   ];
 }
