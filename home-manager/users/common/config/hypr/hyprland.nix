@@ -20,6 +20,7 @@
       exec-once = [
         "/nix/store/fxd030lwhc81ajzxbvxcj1y0p8mgf52q-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
         "quickshell -p ~/Atheris-shell/shell.qml"
+        "dbus-update-activation-environment --systemd --all"
       ];
 
       # ============================================================

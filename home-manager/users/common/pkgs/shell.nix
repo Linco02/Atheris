@@ -2,14 +2,16 @@
 
 {
   home.packages = with pkgs; [
-    hellwal
-    papirus-icon-theme
-
     kdePackages.qt6ct
     kdePackages.qt5compat
 
     # Налаштування зовнішнього вигляду
+    quickshell
     hyprlock
+    
+    papirus-icon-theme
+    hicolor-icon-theme
+    adwaita-icon-theme
 
     # Мультимедійні програми
     eog
@@ -28,7 +30,6 @@
     
     python3
 
-    quickshell
     gtk3
     gtk4
     qt6.qtimageformats

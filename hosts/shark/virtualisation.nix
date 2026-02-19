@@ -1,6 +1,6 @@
 {
   virtualisation = {
-    docker.enable = false;
+    docker.enable = true;
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
   };
