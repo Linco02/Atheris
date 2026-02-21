@@ -41,5 +41,7 @@
 
     openrgb
     libnotify
+
+    furmark
   ];
 }
