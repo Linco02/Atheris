@@ -4,6 +4,7 @@
   # Утиліти
   home.packages = with pkgs; [
     youtube-music
+    spotify
     telegram-desktop
     appimage-run
     vesktop
