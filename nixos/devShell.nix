@@ -12,6 +12,9 @@
     ninja
     cmake
     git
+
+    gparted
+    # fdisk
   ];
 
   # Бібліотеки для розробки
