@@ -8,5 +8,6 @@
     os-prober
     dnsmasq
     spice-gtk
+    polkit_gnome
   ];
 }
