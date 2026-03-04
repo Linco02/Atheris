@@ -9,5 +9,6 @@
     dnsmasq
     spice-gtk
     polkit_gnome
+    steam-run
   ];
 }

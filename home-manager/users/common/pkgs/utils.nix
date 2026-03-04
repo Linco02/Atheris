@@ -44,5 +44,7 @@
     libnotify
 
     furmark
+
+    android-tools
   ];
 }
