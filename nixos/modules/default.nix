@@ -3,7 +3,7 @@
     ./boot.nix
     ./hardware.nix
     ./home-manager.nix
-    ./network.nix
+    ./networking.nix
     ./programs.nix
     ./services.nix
     ./timezone.nix

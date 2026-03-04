@@ -5,7 +5,6 @@
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = [  ];
     };
 
     hostName = hostname;

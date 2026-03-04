@@ -6,7 +6,8 @@
       "compress=zstd:3" 
       "autodefrag" 
       "noatime" 
-      "nofail" 
+      "nofail"
+      "x-gvfs-show"
     ];
   };
 }
