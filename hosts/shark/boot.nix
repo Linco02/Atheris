@@ -1,8 +1,13 @@
 {
   boot = {
-    kernelModules = [ "it87" ];
-    extraModprobeConfig = ''
-      options it87 force_id=0x8628
-    '';
+    kernelModules = [
+      "i2c-dev"
+      "i2c-piix4"
+      "it87"
+    ];
+
+    kernelParams = [
+      "acpi_enforce_resources=lax" 
+    ];
   };
 }

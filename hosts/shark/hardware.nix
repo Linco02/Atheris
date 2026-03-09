@@ -5,6 +5,8 @@
     # Підтримка геймпадів Xbox
     xpadneo.enable = true;
 
+    i2c.enable = true;
+
     # Налаштування steam
     steam-hardware.enable = true;
 

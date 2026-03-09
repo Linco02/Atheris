@@ -10,5 +10,8 @@
     spice-gtk
     polkit_gnome
     steam-run
+
+    i2c-tools
+    openrgb-with-all-plugins
   ];
 }

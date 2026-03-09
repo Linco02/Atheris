@@ -39,8 +39,7 @@
 
     brightnessctl
     lm_sensors
-
-    openrgb
+    
     libnotify
 
     furmark
