@@ -24,20 +24,25 @@
 		theme = let
 			inherit (config.lib.formats.rasi) mkLiteral;
 		in {
-			"@import" = "~/.cache/hellwal/rofi.rasi";
+			"@import" = "~/.cache/atheris/rofi.rasi";
 
 			"*" = {
 				font = "JetBrainsMono Nerd Font 16";
+				background-color = mkLiteral "@bg";
+      	text-color = mkLiteral "@fg";
 			};
 
 			"window" = {
 				border = mkLiteral "2px";
+				border-color = mkLiteral "@acc";
 				border-radius = mkLiteral "15px";
 				padding = mkLiteral "20px";
+				background-color = mkLiteral "@bg";
 			};
 
 			"message" = {
 				border = mkLiteral "2px 0px 0px";
+				background-color = mkLiteral "transparent";
 			};
 
 			"listview" = {
@@ -45,6 +50,7 @@
 				columns = 2;
 				border = mkLiteral "2px 0px 0px";
 				scrollbar = true;
+				border-color = mkLiteral "@acc";
 			};
 
 			"element" = {
@@ -52,12 +58,22 @@
 				spacing = mkLiteral "10px";
 			};
 
+			"element selected" = {
+				background-color = mkLiteral "@acc";
+			};
+
 			"element-icon" = {
 				size = mkLiteral "32px";
+				background-color = mkLiteral "transparent";
+			};
+
+			"element-text" = {
+				background-color = mkLiteral "transparent";
 			};
 
 			"scrollbar" = {
 				handle-width = mkLiteral "5px";
+				background-color = mkLiteral "@acc";
 			};
 
 			"inputbar" = {
@@ -65,12 +81,4 @@
 			};
 		};
 	};
-
-	# nixpkgs.overlays = [
-	# 	(final: prev: {
-	# 		rofi-calc = prev.rofi-calc.override {
-	# 			rofi-unwrapped = prev.rofi-wayland-unwrapped;
-	# 		};
-	# 	})
-	# ];
 }

@@ -2,7 +2,7 @@
   imports = [
     ./hypr
     ./kitty
+    ./matugen
     ./rofi
-    ./waybar
   ];
 }

@@ -11,7 +11,7 @@
       # ============================================================
       
       # Load color scheme from wallpaper
-      source = "~/.cache/hellwal/hyprland-colors.conf";
+      source = "~/.cache/atheris/hypr.conf";
 
       # Monitor configuration
       monitor = ", preferred, auto, 1";
@@ -53,7 +53,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "$color1";
+        "col.active_border" = "$active_border";
+        "col.inactive_border" = "$inactive_border";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -85,7 +86,7 @@
           enabled = false;
           range = 6;
           render_power = 4;
-          color = "$foreground";
+          color = "$bg";
         };
 
         # Blur effect

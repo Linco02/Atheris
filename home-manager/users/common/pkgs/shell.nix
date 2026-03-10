@@ -7,6 +7,7 @@
 
     # Налаштування зовнішнього вигляду
     quickshell
+    matugen
     hyprlock
     
     papirus-icon-theme
