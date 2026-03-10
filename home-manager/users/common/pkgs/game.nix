@@ -8,7 +8,7 @@
     steam
     prismlauncher
 
-    wineWowPackages.full
+    wineWow64Packages.full
     winetricks
     protontricks
     protonup-qt

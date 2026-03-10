@@ -3,7 +3,7 @@
 {
   # Утиліти
   home.packages = with pkgs; [
-    youtube-music
+    pear-desktop
     spotify
     telegram-desktop
     appimage-run
