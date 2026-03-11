@@ -11,10 +11,14 @@
       # ============================================================
       
       # Load color scheme from wallpaper
-      source = "~/.cache/atheris/hypr.conf";
+      source = "/tmp/atheris/hypr.conf";
 
       # Monitor configuration
       monitor = ", preferred, auto, 1";
+
+      env = [
+        "HYPRLAND_NO_WARNINGS,1"
+      ];
 
       # Startup commands executed on Hyprland launch
       exec-once = [
@@ -53,8 +57,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "$active_border";
-        "col.inactive_border" = "$inactive_border";
+        "col.active_border" = "$active";
+        "col.inactive_border" = "$outline";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -86,7 +90,7 @@
           enabled = false;
           range = 6;
           render_power = 4;
-          color = "$bg";
+          color = "$surface";
         };
 
         # Blur effect

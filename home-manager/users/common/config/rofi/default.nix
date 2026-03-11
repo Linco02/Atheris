@@ -24,20 +24,20 @@
 		theme = let
 			inherit (config.lib.formats.rasi) mkLiteral;
 		in {
-			"@import" = "~/.cache/atheris/rofi.rasi";
+			"@import" = "/tmp/atheris/rofi.rasi";
 
 			"*" = {
 				font = "JetBrainsMono Nerd Font 16";
-				background-color = mkLiteral "@bg";
-      	text-color = mkLiteral "@fg";
+				background-color = mkLiteral "@surface";
+      	text-color = mkLiteral "@textSurface";
 			};
 
 			"window" = {
 				border = mkLiteral "2px";
-				border-color = mkLiteral "@acc";
+				border-color = mkLiteral "@active";
 				border-radius = mkLiteral "15px";
 				padding = mkLiteral "20px";
-				background-color = mkLiteral "@bg";
+				background-color = mkLiteral "@surface";
 			};
 
 			"message" = {
@@ -50,7 +50,7 @@
 				columns = 2;
 				border = mkLiteral "2px 0px 0px";
 				scrollbar = true;
-				border-color = mkLiteral "@acc";
+				border-color = mkLiteral "@active";
 			};
 
 			"element" = {
@@ -59,7 +59,7 @@
 			};
 
 			"element selected" = {
-				background-color = mkLiteral "@acc";
+				background-color = mkLiteral "@surfaceRaised";
 			};
 
 			"element-icon" = {
@@ -67,13 +67,15 @@
 				background-color = mkLiteral "transparent";
 			};
 
-			"element-text" = {
-				background-color = mkLiteral "transparent";
+			"element-text selected" = {
+				background-color = mkLiteral "@surfaceRaised";
+				text-color = mkLiteral "@textAccent";
 			};
 
 			"scrollbar" = {
 				handle-width = mkLiteral "5px";
-				background-color = mkLiteral "@acc";
+				background-color = mkLiteral "@surfaceRaised";
+				handle-color = mkLiteral "@active";
 			};
 
 			"inputbar" = {
