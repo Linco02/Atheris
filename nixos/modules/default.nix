@@ -6,6 +6,7 @@
     ./networking.nix
     ./programs.nix
     ./services.nix
+    ./systemd.nix
     ./timezone.nix
     ./user.nix
   ];

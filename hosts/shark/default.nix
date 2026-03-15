@@ -9,7 +9,6 @@
     ./programs.nix
     ./security.nix
     ./services.nix
-    ./systemd.nix
     ./virtualisation.nix
   ];
 }
