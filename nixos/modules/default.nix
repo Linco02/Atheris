@@ -9,5 +9,6 @@
     ./systemd.nix
     ./timezone.nix
     ./user.nix
+    ./xdg.nix
   ];
 }

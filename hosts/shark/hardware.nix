@@ -12,6 +12,7 @@
 
     # Налаштування графіки
     graphics = {
+      package = pkgs-unstable.mesa;
       enable = true;
       enable32Bit = true;
     };

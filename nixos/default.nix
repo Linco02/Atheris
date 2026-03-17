@@ -14,16 +14,4 @@
 
   # Дозвіл на використання unfree пакетів
   nixpkgs.config.allowUnfree = true;
-
-  # Налаштування xdg-portal для Hyprland
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-    config = {
-      common.default = "*";
-    };
-  };
 }
