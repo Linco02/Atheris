@@ -32,6 +32,7 @@
     sassc
     pavucontrol
     gnome-software
+    google-chrome
 
     gdk-pixbuf
     poppler

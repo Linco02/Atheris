@@ -166,14 +166,16 @@
         "$mainMod SHIFT, J, resizeactive, 0 100"
 
         # Application shortcuts
-        "$mainMod, I, exec, python ~/Documents/Scripts/init-monitor.py"
         "$mainMod, Q, exec, $terminal"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, R, exec, $menu"
         "$mainMod, F, exec, $browser"
-        "$mainMod, L, exec, hyprlock"
-        "$mainMod, W, exec, waypaper"
         ", Print, exec, hyprshot -m region -o ~/Pictures/screanshoot/"
+
+        # Quickshell shortcuts
+        "$mainMod, D, global, quickshell:dashboard_menu"
+        "$mainMod, W, global, quickshell:wallpaper_selector"
+        "$mainMod, W, global, quickshell:lock_session"
 
         # Window management
         "$mainMod, C, killactive,"
