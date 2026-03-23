@@ -175,6 +175,7 @@
         # Quickshell shortcuts
         "$mainMod, D, global, quickshell:dashboard_menu"
         "$mainMod, W, global, quickshell:wallpaper_selector"
+        "$mainMod, Y, global, quickshell:programs_selector"
         "$mainMod, L, global, quickshell:lock_session"
 
         # Window management
