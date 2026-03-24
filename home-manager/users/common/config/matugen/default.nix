@@ -16,5 +16,10 @@
     [templates.rofi]
     input_path = '~/Atheris/assets/matugen/rofi.mustache'
     output_path = '/tmp/atheris/rofi.rasi'
+
+    [templates.openrgb]
+    input_path = '~/Atheris/assets/matugen/openrgb.mustache'
+    output_path = '/tmp/atheris/openrgb.sh'
+    template_type = "Command"
   '';
 }
