@@ -1,12 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, quickshell, inputs, ... }:
 
 {
   home.packages = with pkgs; [
+    # shell
+
+    (inputs.quickshell.packages.${pkgs.system}.default.withModules [
+      pkgs.qt6.qtmultimedia
+    ])
+    # quickshell
+    qt6.qtimageformats
+    qt6.qtmultimedia
+    libsForQt5.qt5ct
     kdePackages.qt6ct
     kdePackages.qt5compat
+    kdePackages.qtsvg
+    kdePackages.qtimageformats
 
     # Налаштування зовнішнього вигляду
-    quickshell
     matugen
     hyprlock
     
@@ -33,10 +43,5 @@
 
     gtk3
     gtk4
-    qt6.qtimageformats
-    libsForQt5.qt5ct
-    kdePackages.qt6ct
-    kdePackages.qtsvg
-    kdePackages.qtimageformats
   ];  
 }

@@ -46,5 +46,8 @@
     furmark
 
     android-tools
+
+    clinfo
+    libva-utils
   ];
 }

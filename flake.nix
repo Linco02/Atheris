@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    waybar = {
-      url = "github:Alexays/Waybar/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     quickshell = {
       url = "github:quickshell-mirror/quickshell?ref=v0.2.1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,13 +25,25 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, waybar, quickshell, disko, nix-vscode-extensions, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
       homeStateVersion = "25.05";
       defaultUser = "linco02";
-      pkgs = nixpkgs.legacyPackages.${defaultSystem};
+      # pkgs = nixpkgs.legacyPackages.${defaultSystem};
+
+      pkgs = import nixpkgs {
+        system = defaultSystem;
+        overlays = [
+          (final: prev: {
+            quickshell = prev.quickshell.overrideAttrs (old: {
+              buildInputs = old.buildInputs ++ [ final.qt6.qtmultimedia ];
+              cmakeFlags = (old.cmakeFlags or []) ++ [ "-DQUICKSHELL_MULTIMEDIA=ON" ];
+            });
+          })
+        ];
+      };
 
       # devShell
       developer = import ./nixos/devShell.nix { inherit pkgs; };
@@ -55,7 +62,7 @@
       # Build a Home Manager configuration for a host.
       makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixpkgs inputs home-manager homeStateVersion user hostname; };
+        extraSpecialArgs = { inherit nixpkgs inputs home-manager quickshell homeStateVersion user hostname; };
         modules = [
           ./home-manager/home.nix
           ./home-manager/users/common
@@ -85,4 +92,3 @@
       };
     };
 }
-
