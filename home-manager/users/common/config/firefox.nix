@@ -32,8 +32,6 @@
         ];
 
         userChrome = ''
-          @import url("file:///tmp/atheris/firefox-colors.css");
-
           #navigator-toolbox {
             background-color: var(--m3-bg) !important;
             border-bottom: 1px solid var(--m3-outline) !important;

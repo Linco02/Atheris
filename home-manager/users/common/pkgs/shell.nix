@@ -18,7 +18,7 @@
 
     # Налаштування зовнішнього вигляду
     matugen
-    hyprlock
+    pywalfox-native
     
     papirus-icon-theme
     hicolor-icon-theme

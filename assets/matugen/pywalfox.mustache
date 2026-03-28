@@ -1,27 +1,33 @@
 #!/bin/sh
 sleep 1
-mkdir -p ~/.config/wal
-cat > ~/.config/wal/colors.css << EOF
-:root {
-    --wallust-background: #{{colors.background.default.hex_stripped}};
-    --wallust-foreground: #{{colors.on_background.default.hex_stripped}};
-    --wallust-cursor: #{{colors.on_background.default.hex_stripped}};
-    --wallust-color0: #{{colors.background.default.hex_stripped}};
-    --wallust-color1: #{{colors.primary.default.hex_stripped}};
-    --wallust-color2: #{{colors.secondary.default.hex_stripped}};
-    --wallust-color3: #{{colors.tertiary.default.hex_stripped}};
-    --wallust-color4: #{{colors.primary_container.default.hex_stripped}};
-    --wallust-color5: #{{colors.secondary_container.default.hex_stripped}};
-    --wallust-color6: #{{colors.tertiary_container.default.hex_stripped}};
-    --wallust-color7: #{{colors.on_background.default.hex_stripped}};
-    --wallust-color8: #{{colors.surface.default.hex_stripped}};
-    --wallust-color9: #{{colors.primary.default.hex_stripped}};
-    --wallust-color10: #{{colors.secondary.default.hex_stripped}};
-    --wallust-color11: #{{colors.tertiary.default.hex_stripped}};
-    --wallust-color12: #{{colors.primary.default.hex_stripped}};
-    --wallust-color13: #{{colors.secondary.default.hex_stripped}};
-    --wallust-color14: #{{colors.tertiary.default.hex_stripped}};
-    --wallust-color15: #{{colors.on_background.default.hex_stripped}};
+mkdir -p ~/.cache/wal
+cat > ~/.cache/wal/colors.json << 'EOF'
+{
+    "wallpaper": "/tmp/wallpaper",
+    "alpha": "100",
+    "colors": {
+        "color0": "#{{colors.background.default.hex_stripped}}",
+        "color1": "#{{colors.primary.default.hex_stripped}}",
+        "color2": "#{{colors.secondary.default.hex_stripped}}",
+        "color3": "#{{colors.tertiary.default.hex_stripped}}",
+        "color4": "#{{colors.primary_container.default.hex_stripped}}",
+        "color5": "#{{colors.secondary_container.default.hex_stripped}}",
+        "color6": "#{{colors.tertiary_container.default.hex_stripped}}",
+        "color7": "#{{colors.on_background.default.hex_stripped}}",
+        "color8": "#{{colors.background.default.hex_stripped}}",
+        "color9": "#{{colors.primary.default.hex_stripped}}",
+        "color10": "#{{colors.secondary.default.hex_stripped}}",
+        "color11": "#{{colors.tertiary.default.hex_stripped}}",
+        "color12": "#{{colors.primary.default.hex_stripped}}",
+        "color13": "#{{colors.secondary.default.hex_stripped}}",
+        "color14": "#{{colors.tertiary.default.hex_stripped}}",
+        "color15": "#{{colors.on_background.default.hex_stripped}}"
+    },
+    "special": {
+        "background": "#{{colors.background.default.hex_stripped}}",
+        "foreground": "#{{colors.on_background.default.hex_stripped}}",
+        "cursor": "#{{colors.on_background.default.hex_stripped}}"
+    }
 }
 EOF
 pywalfox update
