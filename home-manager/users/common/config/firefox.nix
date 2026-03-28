@@ -3,7 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    languagePacks = [uk];
+    languagePacks = ["uk"];
     policies = {
       DefaultDownloadDirectory = "\${user}/Downloads";
     };
