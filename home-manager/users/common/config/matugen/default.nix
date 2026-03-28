@@ -21,5 +21,9 @@
     input_path = '~/Atheris/assets/matugen/openrgb.mustache'
     output_path = '/tmp/atheris/openrgb.sh'
     template_type = "Command"
+
+    [templates.firefox]
+    input_path = '~/Atheris/assets/matugen/firefox.css.mustache'
+    output_path = '/tmp/atheris/firefox.css'
   '';
 }

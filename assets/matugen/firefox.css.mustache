@@ -1,0 +1,16 @@
+:root {
+  --pywal-bg: {{colors.surface.hex}};
+  --pywal-fg: {{colors.on_surface.hex}};
+  --pywal-accent: {{colors.primary.hex}};
+}
+
+/* Приклад: зміна кольору фону панелі вкладок */
+#TabsToolbar {
+  background-color: {{colors.surface_container_low.hex}} !important;
+  color: {{colors.on_surface.hex}} !important;
+}
+
+/* Колір активної вкладки */
+.tab-background[selected="true"] {
+  background-color: {{colors.primary_container.hex}} !important;
+}
