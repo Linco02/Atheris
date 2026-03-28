@@ -31,5 +31,9 @@
     input_path = '~/Atheris/assets/matugen/gtk.mustache'
     output_path = '/tmp/atheris/gtk.css'
     template_type = "Css"
+
+    [templates.kitty]
+    input_path = '~/Atheris/assets/matugen/kitty.mustache'
+    output_path = '/tmp/atheris/kitty-colors.conf'
   '';
 }
