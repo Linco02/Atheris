@@ -26,5 +26,10 @@
     input_path = '~/Atheris/assets/matugen/pywalfox.mustache'
     output_path = '/tmp/atheris/pywalfox.sh'
     template_type = "Command"
+
+    [templates.gtk]
+    input_path = '~/Atheris/assets/matugen/gtk.mustache'
+    output_path = '/tmp/atheris/gtk.css'
+    template_type = "Css"
   '';
 }
