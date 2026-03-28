@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nur.url = "github:nix-community/NUR";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -25,7 +26,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
@@ -62,7 +63,7 @@
       # Build a Home Manager configuration for a host.
       makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixpkgs inputs home-manager quickshell homeStateVersion user hostname; };
+        extraSpecialArgs = { inherit nixpkgs inputs nur home-manager quickshell homeStateVersion user hostname; };
         modules = [
           ./home-manager/home.nix
           ./home-manager/users/common

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nur, ... }:
 
 {
   # Утиліти
@@ -49,5 +49,6 @@
 
     clinfo
     libva-utils
+    nur
   ];
 }

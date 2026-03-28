@@ -22,8 +22,13 @@
     output_path = '/tmp/atheris/openrgb.sh'
     template_type = "Command"
 
+    [templates.pywalfox]
+    input_path = '~/Atheris/assets/matugen/pywalfox.mustache'
+    output_path = '/tmp/atheris/pywalfox.sh'
+    template_type = "Command"
+
     [templates.firefox]
-    input_path = '~/Atheris/assets/matugen/firefox.mustache'
+    input_path = '~/Atheris/assets/matugen/firefox-colors.mustache'
     output_path = '/tmp/atheris/firefox-colors.css'
   '';
 }
