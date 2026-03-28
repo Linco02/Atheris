@@ -1,8 +1,9 @@
 {
   imports = [
-    ./hypr
-    ./kitty
-    ./matugen
-    ./rofi
+    ./firefox.nix
+    ./hyprland.nix
+    ./kitty.nix
+    ./matugen.nix
+    ./rofi.nix
   ];
 }

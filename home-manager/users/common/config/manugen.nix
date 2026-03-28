@@ -23,7 +23,7 @@
     template_type = "Command"
 
     [templates.firefox]
-    input_path = '~/Atheris/assets/matugen/firefox.css.mustache'
-    output_path = '/tmp/atheris/firefox.css'
+    input_path = '~/Atheris/assets/matugen/firefox.mustache'
+    output_path = '/tmp/atheris/firefox-colors.css'
   '';
 }
