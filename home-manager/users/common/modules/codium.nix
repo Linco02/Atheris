@@ -10,6 +10,14 @@ in
     profiles.default = {
       userSettings = {
         "workbench.colorTheme" = "Matugen";
+        "git.confirmSync" = false;
+        "git.enableSmartCommit" = true;
+        "git.postCommitCommand" = "none";
+        "workbench.editorAssociations" = {
+          "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc" = "default";
+          "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui" = "default";
+          "*.qrc" = "qt-core.qrcEditor";
+        };
       };
       extensions = with marketplace; [
         arrterian.nix-env-selector
