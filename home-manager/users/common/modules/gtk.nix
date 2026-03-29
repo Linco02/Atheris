@@ -36,6 +36,4 @@
     ln -sf /tmp/atheris/gtk.css ${config.home.homeDirectory}/.config/gtk-4.0/gtk.css
     ln -sf /tmp/atheris/gtk.css ${config.home.homeDirectory}/.config/gtk-3.0/gtk.css
   '';
-  # xdg.configFile."gtk-4.0/gtk.css".source = config.lib.file.mkOutOfStoreSymlink "/tmp/atheris/gtk.css";
-  # xdg.configFile."gtk-3.0/gtk.css".source = config.lib.file.mkOutOfStoreSymlink "/tmp/atheris/gtk.css";
 }
