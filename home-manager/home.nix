@@ -1,4 +1,4 @@
-{ pkgs, config, homeStateVersion, user, hostname, ... }:
+{ pkgs, config, homeStateVersion, user, hostname, inputs, ... }:
 
 {
   home = {
@@ -21,9 +21,17 @@
     };
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  # nixpkgs = {
+  #   config = {
+  #     allowUnfree = true;
+  #   };
+  #   overlays = [
+  #     inputs.nur.overlays.default
+  #     inputs.millennium.overlays.default
+  #   ];
+  # };
+
+  # nixpkgs.overlays = [ inputs.nur.overlays.default ];
 
   services.dunst.enable = false;
 }

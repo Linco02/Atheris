@@ -1,7 +1,6 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ inputs.nur.overlays.default ];
   programs.firefox = {
     enable = true;
     languagePacks = ["uk"];

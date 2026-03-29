@@ -2,9 +2,13 @@
 
 {
   programs = {
-    steam.enable = true;
     gamemode.enable = true;
     virt-manager.enable = true;
+
+    steam = {
+      enable = true;
+      # package = pkgs.millennium-steam;
+    };
 
     java = {
       enable = true;

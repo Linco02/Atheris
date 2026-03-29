@@ -22,7 +22,7 @@
     
     papirus-icon-theme
     hicolor-icon-theme
-    adwaita-icon-theme
+    # adwaita-icon-theme
 
     # Мультимедійні програми
     eog
@@ -46,5 +46,5 @@
 
     gtk3
     gtk4
-  ];  
+  ];
 }

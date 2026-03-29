@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,7 +27,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
@@ -36,7 +37,10 @@
 
       pkgs = import nixpkgs {
         system = defaultSystem;
+        config.allowUnfree = true;
         overlays = [
+          inputs.nur.overlays.default
+          inputs.millennium.overlays.default
           (final: prev: {
             quickshell = prev.quickshell.overrideAttrs (old: {
               buildInputs = old.buildInputs ++ [ final.qt6.qtmultimedia ];
@@ -57,6 +61,11 @@
           inputs.disko.nixosModules.disko
           ./hosts/${hostname}
           ./nixos
+          {
+            nixpkgs.pkgs = pkgs;
+            system.stateVersion = stateVersion;
+            nix.settings.experimental-features = [ "nix-command" "flakes" ];
+          }
         ];
       };
 
