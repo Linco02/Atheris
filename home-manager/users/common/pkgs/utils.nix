@@ -50,5 +50,7 @@
     clinfo
     libva-utils
     nur
+    
+    cava
   ];
 }
