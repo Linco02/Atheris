@@ -4,6 +4,7 @@
     ./hardware.nix
     ./home-manager.nix
     ./networking.nix
+    ./nix.nix
     ./programs.nix
     ./services.nix
     ./systemd.nix

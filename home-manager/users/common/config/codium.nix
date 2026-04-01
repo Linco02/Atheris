@@ -13,6 +13,8 @@ in
         "git.confirmSync" = false;
         "git.enableSmartCommit" = true;
         "git.postCommitCommand" = "none";
+        "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Symbols Nerd Font Mono', 'monospace'";
+        "editor.fontLigatures" = true;
         "workbench.editorAssociations" = {
           "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc" = "default";
           "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui" = "default";
