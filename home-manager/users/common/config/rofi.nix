@@ -15,8 +15,10 @@
 			combi-modi = "drun,filebrowser,emoji,calc";
 			show-icons = true;
 			icon-theme = "Papirus-Dark";
-			display-drun = "󰊗  Apps";
-			display-filebrowser = "  FileBrowser";
+			display-drun = "󰊗 Apps ";
+			display-filebrowser = " FileBrowser ";
+			display-calc = "󰪚 Calc ";
+			display-emoji = "󰱨 Emoji ";
 			drun-display-format = "{name}";
 		};
 

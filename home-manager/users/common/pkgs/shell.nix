@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     # shell
 
-    (inputs.quickshell.packages.${pkgs.system}.default.withModules [
+    (inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
       pkgs.qt6.qtmultimedia
     ])
     # quickshell
