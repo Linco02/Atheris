@@ -96,9 +96,9 @@
         # Blur effect
         blur = {
           enabled = true;
-          size = 3;
-          passes = 1;
-          vibrancy = 0.1696;
+          size = 8;
+          passes = 3;
+          # vibrancy = 0.1696;
         };
       };
 
@@ -147,9 +147,13 @@
         disable_hyprland_logo = false;
       };
 
+      layerrule = [
+        "blur on, match:namespace quickshell"
+      ];
+
       windowrule = [
         ''
-          match:class = ^(org.quickshell)$
+          match:class = ^(quickshell)$
           float = on
           center = on
         ''
