@@ -74,8 +74,8 @@
         extraSpecialArgs = { inherit nixpkgs inputs nur home-manager quickshell homeStateVersion user hostname; };
         modules = [
           ./home-manager/home.nix
-          ./home-manager/users/common
-          ./home-manager/users/${hostname}
+          ./home-manager/config
+          ./home-manager/pkgs
         ];
       };
     in

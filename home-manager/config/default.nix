@@ -3,6 +3,7 @@
     ./cava.nix
     ./codium.nix
     ./firefox.nix
+    ./fish.nix
     ./git.nix
     ./gtk.nix
     ./hyprland.nix
