@@ -21,17 +21,5 @@
     };
   };
 
-  # nixpkgs = {
-  #   config = {
-  #     allowUnfree = true;
-  #   };
-  #   overlays = [
-  #     inputs.nur.overlays.default
-  #     inputs.millennium.overlays.default
-  #   ];
-  # };
-
-  # nixpkgs.overlays = [ inputs.nur.overlays.default ];
-
   services.dunst.enable = false;
 }

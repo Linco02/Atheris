@@ -31,7 +31,7 @@
 			"*" = {
 				font = "JetBrainsMono Nerd Font 16";
 				background-color = mkLiteral "@surface";
-      	text-color = mkLiteral "@textSurface";
+      			text-color = mkLiteral "@textSurface";
 			};
 
 			"window" = {
