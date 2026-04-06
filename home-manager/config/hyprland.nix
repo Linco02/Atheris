@@ -4,7 +4,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
     settings = {
       # ============================================================
       # STARTUP & THEMING
@@ -95,10 +98,11 @@
 
         # Blur effect
         blur = {
-          enabled = true;
-          size = 8;
-          passes = 3;
-          # vibrancy = 0.1696;
+          enabled = false;
+          popups = true;
+          size = 5;
+          passes = 2;
+          vibrancy = 0.1696;
         };
       };
 
@@ -147,16 +151,17 @@
         disable_hyprland_logo = false;
       };
 
-      layerrule = [
-        "blur on, match:namespace quickshell"
-      ];
+      # layerrule = [
+      #   "blur on, match:class quickshell"
+      # ];
 
       windowrule = [
-        ''
-          match:class = ^(quickshell)$
-          float = on
-          center = on
-        ''
+        "float on, match:class org.openrgb.OpenRGB"
+        "opacity 0.9, match:class kitty"
+        "opacity 0.9, match:class thunar"
+        "opacity 0.9, match:class codium"
+        
+        "workspace 5, match:class com.github.th_ch.youtube_music"
       ];
 
       # ============================================================
