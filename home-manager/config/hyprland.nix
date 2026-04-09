@@ -82,7 +82,7 @@
       # VISUAL EFFECTS & DECORATION
       # ============================================================
       decoration = {
-        rounding = 15;
+        rounding = 20;
         active_opacity = 1;
         inactive_opacity = 1;
         dim_inactive = false;
@@ -90,7 +90,7 @@
 
         # Shadow configuration
         shadow = {
-          enabled = false;
+          enabled = true;
           range = 6;
           render_power = 4;
           color = "$surface";
@@ -98,11 +98,13 @@
 
         # Blur effect
         blur = {
-          enabled = false;
-          popups = true;
-          size = 5;
-          passes = 2;
-          vibrancy = 0.1696;
+          enabled = true;
+          size = 2;
+          passes = 3;
+          vibrancy = 0.2;
+          noise = 0.0117;
+          xray = true;
+          brightness = 0.8;
         };
       };
 
@@ -151,9 +153,19 @@
         disable_hyprland_logo = false;
       };
 
-      # layerrule = [
-      #   "blur on, match:class quickshell"
-      # ];
+      layerrule = [
+        "blur on, match:class quickshell"
+        "xray on, match:class quickshell"
+        "blur_popups on, match:class quickshell"
+        "ignore_alpha 0.1, match:class quickshell"
+      ];
+          # enabled = true;
+          # size = 2;
+          # passes = 3;
+          # vibrancy = 0.2;
+          # noise = 0.0117;
+          # xray = true;
+          # brightness = 0.8;
 
       windowrule = [
         "float on, match:class org.openrgb.OpenRGB"
