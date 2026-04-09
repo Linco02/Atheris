@@ -103,7 +103,6 @@
           passes = 3;
           vibrancy = 0.2;
           noise = 0.0117;
-          xray = true;
           brightness = 0.8;
         };
       };
@@ -155,17 +154,9 @@
 
       layerrule = [
         "blur on, match:class quickshell"
-        "xray on, match:class quickshell"
         "blur_popups on, match:class quickshell"
         "ignore_alpha 0.1, match:class quickshell"
       ];
-          # enabled = true;
-          # size = 2;
-          # passes = 3;
-          # vibrancy = 0.2;
-          # noise = 0.0117;
-          # xray = true;
-          # brightness = 0.8;
 
       windowrule = [
         "float on, match:class org.openrgb.OpenRGB"
