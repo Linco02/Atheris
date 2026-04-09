@@ -83,8 +83,8 @@
       # ============================================================
       decoration = {
         rounding = 20;
-        active_opacity = 1;
-        inactive_opacity = 1;
+        active_opacity = 0.9;
+        inactive_opacity = 0.9;
         dim_inactive = false;
         dim_strength = 0.3;
 
@@ -160,10 +160,6 @@
 
       windowrule = [
         "float on, match:class org.openrgb.OpenRGB"
-        "opacity 0.9, match:class kitty"
-        "opacity 0.9, match:class thunar"
-        "opacity 0.9, match:class codium"
-        
         "workspace 5, match:class com.github.th_ch.youtube_music"
       ];
 
