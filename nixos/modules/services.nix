@@ -11,6 +11,8 @@
     tumbler.enable = true;
     fstrim.enable = true;
 
+    power-profiles-daemon.enable = true;
+
     # Greetd налаштування для Hyprland
     greetd = {
       enable = true;

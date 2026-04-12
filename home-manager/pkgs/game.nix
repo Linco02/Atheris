@@ -24,6 +24,6 @@
     gst_all_1.gstreamer
     vkbasalt
 
-    osu-lazer
+    # osu-lazer
   ];
 }
