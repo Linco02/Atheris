@@ -1,5 +1,3 @@
 {
-  security.pam.services.quickshell = {
-    unixAuth = true;
-  };
+  security.pam.services.quickshell.unixAuth = true;
 }
