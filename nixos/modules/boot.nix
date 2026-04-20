@@ -1,14 +1,22 @@
 { pkgs, ...}:
-
+let
+  grubTheme = pkgs.fetchFromGitHub {
+    owner = "OliveThePuffin";
+    repo = "yorha-grub-theme";
+    rev = "4d9cd37";
+    hash = "sha256-Udtx1aMVNP9XMEctWmnEOswxCzWmWvuWclS8UR/PWz0=";
+    sparseCheckout = [ "yorha-1920x1080" ];
+  };
+in
 {
   boot = {
     # Заставка при завантажені
     plymouth = {  
       enable = true;
-      theme = "rings";
+      theme = "seal_2";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
+          selected_themes = [ "seal_2" ];
         })
       ];
     };
@@ -18,6 +26,7 @@
       "quiet"
       "udev.log_level=3"
       "systemd.show_status=auto"
+      "vt.global_cursor_default=0"
     ];
 
     loader = {
@@ -31,9 +40,8 @@
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
-
-        theme = ../../assets/grub2;
-        gfxmodeEfi = "2560x1440";
+        theme = "${grubTheme}/yorha-1920x1080";
+        gfxmodeEfi = "auto";
         gfxpayloadEfi = "keep";
       };
     };
