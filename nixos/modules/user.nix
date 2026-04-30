@@ -8,6 +8,7 @@
       "wheel"
       "networkmanager"
       "libvirtd"
+      "kvm"
       "docker"
       "plugdev"
       "i2c"

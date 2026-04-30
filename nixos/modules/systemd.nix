@@ -18,6 +18,6 @@
       dunst.enable = false;
     };
 
-    services.virt-secret-init-encryption.enable = false;
+    services.virt-secret-init-encryption.enable = true;
   };
 }
