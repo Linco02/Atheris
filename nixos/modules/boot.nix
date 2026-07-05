@@ -28,6 +28,7 @@ in
       "systemd.show_status=auto"
       "vt.global_cursor_default=0"
     ];
+    kernelModules = [ "uinput" "vkms" ];
 
     loader = {
       # Ввімкнення підтримки EFI-змінних

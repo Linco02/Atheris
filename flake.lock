@@ -356,11 +356,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1775423009,
-        "narHash": "sha256-vPKLpjhIVWdDrfiUM8atW6YkIggCEKdSAlJPzzhkQlw=",
+        "lastModified": 1782959384,
+        "narHash": "sha256-xnJJk+ct+D2+wdRxj1wk36w5zV9RVESwRqcklPdt3fM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
+        "rev": "65179426c83bb3f6bc14898b42ea1c6f01d374b0",
         "type": "github"
       },
       "original": {
@@ -451,7 +451,25 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
-        "quickshell": "quickshell"
+        "quickshell": "quickshell",
+        "sunshine": "sunshine"
+      }
+    },
+    "sunshine": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778942313,
+        "narHash": "sha256-uRagpVR+lkOcXqodU5Z4+22WVr0kjdfE2EC7ZuQzODY=",
+        "owner": "LizardByte",
+        "repo": "Sunshine",
+        "rev": "14ffa6fdaa53f7b51512be2b3d24f3939695403c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LizardByte",
+        "ref": "v2026.516.143833",
+        "repo": "Sunshine",
+        "type": "github"
       }
     },
     "websocketpp-src": {

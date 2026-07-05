@@ -8,7 +8,156 @@
       enable = true;
       variables = ["--all"];
     };
+
+    # extraConfig = ''
+    #   seat [seat-sunshine] attach type:pointer
+    #   seat [seat-sunshine] attach type:keyboard
+    # '';
+
+    # extraConfig = ''
+    #   seat = seat-sunshine attach type:pointer
+    #   seat = seat-sunshine attach type:keyboard
+    # '';
+
+    extraConfig = ''
+      # Створюємо сеат для друга і віддаємо йому тільки віртуальні пристрої Sunshine
+      # seat = seat-sunshine attach mouse-passthrough
+      # seat = seat-sunshine attach mouse-passthrough-(absolute)
+      # seat = seat-sunshine attach keyboard-passthrough
+
+      # "device:mouse-passthrough" = {
+      #   output = "HDMI-A-1";
+      # };
+
+      # "device:mouse-passthrough-(absolute)" = {
+      #   output = "HDMI-A-1";
+      # };
+
+      # "device:keyboard-passthrough" = {
+      #   output = "HDMI-A-1";
+      # };
+
+      # device {
+      #   name = mouse-passthrough
+      #   enabled = false
+      # }
+
+      # device {
+      #   name = mouse-passthrough-(absolute)
+      #   enabled = false
+      # }
+
+      # device {
+      
+      #   name = keyboard-passthrough
+      #   keybinds = false
+      # }
+
+      # device:mouse-passthrough {
+      #     enabled = false
+      # }
+
+      # device:mouse-passthrough-(absolute) {
+      #     enabled = false
+      # }
+
+      # device:keyboard-passthrough {
+      #     keybinds = false
+      # }
+
+      # device:mouse-passthrough {
+      #     seat = seat2
+      # }
+
+      # device:mouse-passthrough-(absolute) {
+      #     seat = seat2
+      # }
+
+      # device:keyboard-passthrough {
+      #     seat = seat2
+      # }
+    '';
+
     settings = {
+
+      workspace = [
+        "5, monitor:HEADLESS-2"
+      ];
+
+      device = ({
+        name = "mouse-passthrough";
+        output = "HEADLESS-2";
+      });
+
+      # # Прив'язуємо віртуальну мишу Sunshine суворо до екрана стрімінгу HEADLESS-2
+      # "device:mouse-passthrough" = {
+      #   map_to_output = "HEADLESS-2";
+      # };
+
+      # "device:mouse-passthrough-(absolute)" = {
+      #   map_to_output = "HEADLESS-2";
+      # };
+
+      # # Для клавіатури параметр map_to_output не використовується, 
+      # # тому просто вимикаємо її перехоплення системних гарячих клавіш ноутбука
+      # "device:keyboard-passthrough" = {
+      #   # Якщо цей параметр теж видасть помилку у вашому білді, просто видаліть весь блок клавіатури
+      # };
+
+      # "device:mouse-passthrough" = {
+      #   output = "HDMI-A-1";
+      # };
+
+      # "device:mouse-passthrough-(absolute)" = {
+      #   output = "HDMI-A-1";
+      # };
+
+      # "device:keyboard-passthrough" = {
+      #   output = "HDMI-A-1";
+      # };
+
+      # device = [
+      #   {
+      #     name = "keyboard-passthrough";
+      #     seat = "seat1";
+      #   }
+      #   {
+      #     name = "mouse-passthrough";
+      #     seat = "seat1";
+      #   }
+      #   {
+      #     name = "mouse-passthrough-(absolute)";
+      #     seat = "seat1";
+      #   }
+      # ];
+
+      # device = [
+      #   {
+      #     name = "mouse-passthrough";
+      #     seat = "seat2";
+      #   }
+      #   {
+      #     name = "mouse-passthrough-(absolute)";
+      #     seat = "seat2";
+      #   }
+      #   {
+      #     name = "keyboard-passthrough";
+      #     seat = "seat2";
+      #   }
+      # ];
+
+      # "device:mouse-passthrough" = {
+      #   enabled = false;
+      # };
+
+      # "device:mouse-passthrough-(absolute)" = {
+      #   enabled = false;
+      # };
+
+      # "device:keyboard-passthrough" = {
+      #   keybinds = false;
+      # };
+
       # ============================================================
       # STARTUP & THEMING
       # ============================================================
@@ -53,6 +202,25 @@
         };
       };
 
+      # "seat:[seat-sunshine]:attach" = [
+      #   "type:pointer"
+      #   "type:keyboard"
+      # ];
+
+      # "seat:[seat-sunshine]" = {
+      #   "attach" = [
+      #     "type:pointer"
+      #     "type:keyboard"
+      #   ];
+      # };
+
+      # workspace = [
+      #   "99, monitor:HEADLESS-1"
+      #   "11, monitor:HEADLESS-2"
+      #   "12, monitor:HEADLESS-2"
+      #   "13, monitor:HEADLESS-2"
+      # ];
+
       # ============================================================
       # GENERAL WINDOW & LAYOUT SETTINGS
       # ============================================================
@@ -69,7 +237,7 @@
 
       # Dwindle layout configuration
       dwindle = {
-        pseudotile = true;
+        # pseudotile = true;
         preserve_split = true;
       };
 
@@ -163,6 +331,8 @@
         "workspace 5, match:class com.github.th_ch.youtube_music"
       ];
 
+      # workspace = "99, monitor:HEADLESS-1";
+
       # ============================================================
       # KEYBINDINGS - Regular (bind)
       # ============================================================
@@ -190,7 +360,7 @@
         "$mainMod, C, killactive,"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
-        "$mainMod, J, togglesplit,"
+        "$mainMod, J, layoutmsg, togglesplit,"
         "$mainMod, M, exit,"
 
         # Window focus navigation (arrow keys)

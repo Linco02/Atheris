@@ -4,9 +4,9 @@
   # Налаштування мережі
   networking = {
     firewall = {
-      enable = true;
-      allowedTCPPorts = [ 59100 ];
-      allowedUDPPorts = [ 59100 59200 ];
+      enable = false;
+      allowedTCPPorts = [ 59100 47998 48000 ];
+      allowedUDPPorts = [ 59100 59200 47998 48000 ];
     };
 
     hostName = hostname;

@@ -8,6 +8,7 @@
       homeS = "home-manager switch --flake ~/Atheris#${hostname}";
       nixosS= "sudo nixos-rebuild switch --flake ~/Atheris#${hostname}";
     };
+    generateCompletions = false;
     interactiveShellInit = ''
       microfetch
     '';

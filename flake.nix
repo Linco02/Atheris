@@ -25,13 +25,18 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sunshine = {
+      url = "github:LizardByte/Sunshine/v2026.516.143833?submodules=1";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, sunshine, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
-      homeStateVersion = "25.05";
+      homeStateVersion = "25.11";
       defaultUser = "linco02";
       # pkgs = nixpkgs.legacyPackages.${defaultSystem};
 

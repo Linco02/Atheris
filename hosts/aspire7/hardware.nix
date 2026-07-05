@@ -8,6 +8,8 @@
     # Налаштування steam
     steam-hardware.enable = true;
 
+    uinput.enable = true;
+
     # Налаштування графіки
     graphics = {
       enable = true;

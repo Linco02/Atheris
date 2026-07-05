@@ -45,7 +45,7 @@
 
     furmark
 
-    android-tools
+    # android-tools
 
     clinfo
     libva-utils
