@@ -12,9 +12,6 @@
       "docker"
       "plugdev"
       "i2c"
-      "input"
-      "video"
-      "uinput"
     ];
     shell = pkgs.fish;
   };

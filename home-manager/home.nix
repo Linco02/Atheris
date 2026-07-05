@@ -5,7 +5,6 @@
     username = user;
     homeDirectory = "/home/${user}";
     stateVersion = homeStateVersion;
-    extraOutputsToInstall = [ "man" ];
 
     # курсор
     pointerCursor = {

@@ -10,7 +10,6 @@
     spice-gtk
     polkit_gnome
     steam-run
-    xorg.xrandr
 
     i2c-tools
     openrgb-with-all-plugins
