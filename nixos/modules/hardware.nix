@@ -2,6 +2,8 @@
 
 {
   hardware = {
+    # uinput.enable = true;
+
     # Налаштування Bluetooth
     bluetooth = {
       enable = true;
@@ -10,6 +12,7 @@
         General = {
           Experimental = true;
           FastConnectable = true;
+          ControllerMode = "bredr";
         };
         Policy = {
           AutoEnable = true;

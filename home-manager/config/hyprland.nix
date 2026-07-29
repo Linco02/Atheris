@@ -18,7 +18,12 @@
       source = "/tmp/atheris/hypr.conf";
 
       # Monitor configuration
-      monitor = ", preferred, auto, 1";
+      monitor = [
+        ", preferred, auto, 1"
+        # "eDP-1, disable"
+        "eDP-1, 1920x1080@60, 0x0, 1"
+        "HDMI-A-1, 2560x1440@144, -2560x0, 1"
+      ];
 
       env = [
         "HYPRLAND_NO_WARNINGS,1"
@@ -190,6 +195,7 @@
         # Window management
         "$mainMod, C, killactive,"
         "$mainMod, V, togglefloating,"
+        "$mainMod, B, fullscreen, 0"
         "$mainMod, P, pseudo,"
         "$mainMod, J, layoutmsg, togglesplit,"
         "$mainMod, M, exit,"

@@ -24,6 +24,9 @@
     gst_all_1.gstreamer
     vkbasalt
 
+    # ryubing
+    cemu
+
     # osu-lazer
   ];
 }

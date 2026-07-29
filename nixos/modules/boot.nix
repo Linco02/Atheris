@@ -29,6 +29,11 @@ in
       "vt.global_cursor_default=0"
     ];
 
+    kernelModules = [
+      "hid_nintendo"
+      "uinput"
+    ];
+
     loader = {
       # Ввімкнення підтримки EFI-змінних
       efi.canTouchEfiVariables = true;
