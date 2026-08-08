@@ -13,6 +13,8 @@
 
     power-profiles-daemon.enable = true;
 
+    # fwupd.enable = true;
+
     # Greetd налаштування для Hyprland
     greetd = {
       enable = true;

@@ -32,7 +32,7 @@
     sassc
     pavucontrol
     gnome-software
-    google-chrome
+    # google-chrome
 
     gdk-pixbuf
     poppler
@@ -45,7 +45,10 @@
 
     furmark
 
-    # android-tools
+    obsidian
+
+    android-tools
+    wayvnc
 
     clinfo
     libva-utils
