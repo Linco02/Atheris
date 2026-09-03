@@ -12,7 +12,7 @@
     };
 
     quickshell = {
-      url = "github:quickshell-mirror/quickshell?ref=v0.2.1";
+      url = "github:quickshell-mirror/quickshell?ref=v0.3.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -36,7 +36,7 @@
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
-      homeStateVersion = "25.11";
+      homeStateVersion = "26.05";
       defaultUser = "linco02";
       # pkgs = nixpkgs.legacyPackages.${defaultSystem};
 

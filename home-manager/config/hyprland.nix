@@ -166,7 +166,13 @@
 
       windowrule = [
         "float on, match:class org.openrgb.OpenRGB"
+        
         "workspace 5, match:class com.github.th_ch.youtube_music"
+
+        "float on, match:class org.quickshell"
+        "workspace 2 silent, match:class org.quickshell"
+
+        "opacity 1.0 override 1.0 override, match:class ^(Minecraft.*)$"
       ];
 
       # ============================================================

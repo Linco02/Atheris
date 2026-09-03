@@ -3,7 +3,7 @@
 {
   services = {
     # Bluetooth менеджер
-    blueman.enable = true;
+    # blueman.enable = true;
 
     # Налаштування файлової системи та мініатюр
     gvfs.enable = true;

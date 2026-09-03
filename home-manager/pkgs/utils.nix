@@ -49,6 +49,7 @@
 
     android-tools
     wayvnc
+    localsend
 
     clinfo
     libva-utils

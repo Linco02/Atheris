@@ -8,6 +8,13 @@ in
     enable = true;
     package = pkgs.vscodium;
     profiles.default = {
+      keybindings = [
+        {
+          key = "ctrl+[Slash]";
+          command = "editor.action.commentLine";
+          when = "editorTextFocus && !editorReadonly";
+        }
+      ];
       userSettings = {
         "workbench.colorTheme" = "Matugen";
         "git.confirmSync" = false;
