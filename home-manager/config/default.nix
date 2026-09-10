@@ -11,5 +11,6 @@
     ./matugen.nix
     ./qt.nix
     ./rofi.nix
+    ./vim.nix
   ];
 }

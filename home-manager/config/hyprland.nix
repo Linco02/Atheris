@@ -21,7 +21,7 @@
       monitor = [
         ", preferred, auto, 1"
         # "eDP-1, disable"
-        "DP-3, 2560x1440@179.84, 0x0, 1"
+        "DP-2, 2560x1440@179.84, 0x0, 1"
         # "HDMI-A-1, 2560x1440@144, -2560x0, 1"E
       ];
 
@@ -89,8 +89,8 @@
       # ============================================================
       decoration = {
         rounding = 20;
-        active_opacity = 0.9;
-        inactive_opacity = 0.9;
+        active_opacity = 0.95;
+        inactive_opacity = 0.95;
         dim_inactive = false;
         dim_strength = 0.3;
 

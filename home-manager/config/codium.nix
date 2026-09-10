@@ -6,6 +6,7 @@ in
 {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = true;
     package = pkgs.vscodium;
     profiles.default = {
       keybindings = [
@@ -29,6 +30,7 @@ in
         };
       };
       extensions = with marketplace; [
+        vscodevim.vim
         arrterian.nix-env-selector
         batisteo.vscode-django
         bbenoist.nix
