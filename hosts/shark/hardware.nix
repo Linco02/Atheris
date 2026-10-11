@@ -16,5 +16,18 @@
       enable = true;
       enable32Bit = true;
     };
+
+    display = {
+      edid.packages = [
+        (pkgs.runCommand "edid-aw2725dm" { } ''
+          mkdir -p $out/lib/firmware/edid
+          cp ${./aw2725dm.bin} $out/lib/firmware/edid/aw2725dm.bin
+        '')
+      ];
+      outputs."DP-3" = {
+        edid = "aw2725dm.bin";
+        mode = "e";
+      };
+    };
   };
 }

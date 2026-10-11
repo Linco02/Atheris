@@ -12,6 +12,7 @@
     ninja
     cmake
     git
+    clang-tools
 
     gparted
     # fdisk
@@ -32,6 +33,7 @@
     qt6.wrapQtAppsHook
     makeWrapper
     bashInteractive
+    nodejs
   ];
 
   # Редактори та IDE

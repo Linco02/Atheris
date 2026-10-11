@@ -6,6 +6,10 @@
     homeDirectory = "/home/${user}";
     stateVersion = homeStateVersion;
 
+    sessionVariables = {
+      GTK_USE_PORTAL = "1";
+    };
+
     # курсор
     pointerCursor = {
       package = pkgs.bibata-cursors;

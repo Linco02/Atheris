@@ -23,7 +23,12 @@
     kdePackages.kcalc
     microfetch
     dunst
-    hyprshot
+    grim
+    slurp
+    # tesseract
+    translate-shell
+    (tesseract.override { enableLanguages = [ "eng" "ukr" ]; })
+    wl-clipboard
     jq
     wget
     htop
@@ -56,5 +61,7 @@
     nur
     
     cava
+
+    nodejs
   ];
 }

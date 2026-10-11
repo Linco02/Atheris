@@ -17,6 +17,18 @@ in
         }
       ];
       userSettings = {
+        "C_Cpp.intelliSenseEngine" = "disabled";
+        "clangd.path" = "clangd";
+        "clangd.arguments" = [
+          "--background-index"
+          "--clang-tidy"
+          "--header-insertion=iwyu"
+          "--completion-style=detailed"
+        ];
+        
+        "cmake.buildDirectory" = "\${workspaceFolder}/build";
+        "cmake.generator" = "Ninja";
+
         "workbench.colorTheme" = "Matugen";
         "git.confirmSync" = false;
         "git.enableSmartCommit" = true;
@@ -28,6 +40,7 @@ in
           "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui" = "default";
           "*.qrc" = "qt-core.qrcEditor";
         };
+        "qt-core.showWelcomePageOnActivation" = false;
       };
       extensions = with marketplace; [
         vscodevim.vim
@@ -66,6 +79,10 @@ in
         mohsen1.prettify-json
         visbydev.folder-path-color
         mkhl.direnv
+        formulahendry.code-runner
+        llvm-vs-code-extensions.vscode-clangd
+        twxs.cmake
+        ms-vscode.cmake-tools
       ];
     };
   };

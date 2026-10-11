@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ inputs, pkgs, config, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -8,6 +8,9 @@
       enable = true;
       variables = ["--all"];
     };
+    # plugins = [
+    #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+    # ];
 
     settings = {
       # ============================================================
@@ -21,7 +24,7 @@
       monitor = [
         ", preferred, auto, 1"
         # "eDP-1, disable"
-        "DP-2, 2560x1440@179.84, 0x0, 1"
+        "DP-3, 2560x1440@179.84, 0x0, 1"
         # "HDMI-A-1, 2560x1440@144, -2560x0, 1"E
       ];
 
@@ -89,8 +92,8 @@
       # ============================================================
       decoration = {
         rounding = 20;
-        active_opacity = 0.95;
-        inactive_opacity = 0.95;
+        active_opacity = 0.99;
+        inactive_opacity = 0.8;
         dim_inactive = false;
         dim_strength = 0.3;
 
@@ -110,6 +113,8 @@
           vibrancy = 0.2;
           noise = 0.0117;
           brightness = 0.8;
+          popups = true;
+          popups_ignorealpha = 0.1;
         };
       };
 
@@ -143,8 +148,10 @@
           "fadeLayersIn, 1, 10, smoth"
           "fadeLayersOut, 1, 10, smoth"
           "border, 1, 10, smoth"
-          "workspacesIn, 1, 2, ease-out, slide"
-          "workspacesOut, 1, 2, ease-out, slide"
+          # "workspacesIn, 1, 2, ease-out, slide"
+          # "workspacesOut, 1, 2, ease-out, slide"
+          "workspacesIn, 1, 2, ease-out, slidevert"
+          "workspacesOut, 1, 2, ease-out, slidevert"
           "specialWorkspaceIn, 1, 2, ease-out, slidevert"
           "specialWorkspaceOut, 1, 2, ease-out, slidevert"
         ];
@@ -155,10 +162,13 @@
       # ============================================================
       misc = {
         force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
+        disable_hyprland_logo = true;
       };
 
       layerrule = [
+        # "no_anim on, match:namespace selection"
+        # "animation popin, match:namespace selection"
+
         "blur on, match:class quickshell"
         "blur_popups on, match:class quickshell"
         "ignore_alpha 0.1, match:class quickshell"
@@ -168,6 +178,8 @@
         "float on, match:class org.openrgb.OpenRGB"
         
         "workspace 5, match:class com.github.th_ch.youtube_music"
+
+        "opacity 1.0 override 1.0 override, match:class ^(steam_app_.*)$"
 
         "float on, match:class org.quickshell"
         "workspace 2 silent, match:class org.quickshell"
@@ -190,7 +202,7 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, R, exec, $menu"
         "$mainMod, F, exec, $browser"
-        ", Print, exec, hyprshot -m region -o ~/Pictures/screanshoot/"
+        ", Print, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png"
 
         # Quickshell shortcuts
         "$mainMod, D, global, quickshell:dashboard_menu"

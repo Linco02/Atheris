@@ -11,8 +11,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     quickshell = {
-      url = "github:quickshell-mirror/quickshell?ref=v0.3.1";
+      url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -32,7 +39,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, sunshine, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, sunshine, hyprland, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
