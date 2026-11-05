@@ -14,5 +14,13 @@
       enable = true;
       package = pkgs.temurin-bin-17;
     };
+
+    corectrl = {
+      enable = true;
+      gpuOverclock = {
+        enable = true;
+        ppfeaturemask = "0xffffffff";
+      };
+    };
   };
 }

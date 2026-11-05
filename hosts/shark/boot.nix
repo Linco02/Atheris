@@ -7,7 +7,8 @@
     ];
 
     kernelParams = [
-      "acpi_enforce_resources=lax" 
+      "acpi_enforce_resources=lax"
+      "amdgpu.ppfeaturemask=0xffffffff"
     ];
   };
 }

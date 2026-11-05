@@ -63,5 +63,10 @@
     cava
 
     nodejs
+
+    google-chrome
+
+    amdgpu_top
+    unigine-superposition
   ];
 }

@@ -42,5 +42,6 @@
     neovim
     vim
     qtcreator
+    claude-code
   ];
 }

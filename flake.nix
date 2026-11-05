@@ -37,9 +37,16 @@
       url = "github:LizardByte/Sunshine/v2026.516.143833?submodules=1";
       flake = false;
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, sunshine, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, quickshell, disko, nix-vscode-extensions, nur, millennium, sunshine, hyprland, nixvim, claude-code, ... }@inputs:
     let
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
@@ -83,11 +90,12 @@
       # Build a Home Manager configuration for a host.
       makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixpkgs inputs nur home-manager quickshell homeStateVersion user hostname; };
+        extraSpecialArgs = { inherit nixpkgs inputs nur home-manager quickshell nixvim homeStateVersion user hostname; };
         modules = [
           ./home-manager/home.nix
           ./home-manager/config
           ./home-manager/pkgs
+          nixvim.homeManagerModules.nixvim
         ];
       };
     in

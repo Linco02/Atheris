@@ -1,61 +1,109 @@
 { pkgs, ... }:
 
 {
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
 
-    # Системні пакетні залежності для LSP / форматерів / Treesitter
-    extraPackages = with pkgs; [
-      lua-language-server
-      nil # LSP для Nix
-      ripgrep # Потрібен для швидкого пошуку через Telescope
-      fd
+    # Базові опції Neovim (vim.opt)
+    opts = {
+      number = true;         # Показувати номери рядків
+      relativenumber = true; # Відносні номери рядків (зручно для Vim-навігації)
+      shiftwidth = 2;        # Розмір відступу
+      tabstop = 2;
+      expandtab = true;      # Пробіли замість Tab
+      smartindent = true;
+      termguicolors = true;  # Truecolor підтримка
+      ignorecase = true;     # Ігнорувати регістр при пошуку
+      smartcase = true;      # Зважати на регістр, якщо є великі літери
+      cursorline = true;     # Підсвічувати поточний рядок
+    };
+
+    # Глобальна клавіша-лідер
+    globals.mapleader = " ";
+
+    # Підключення та налаштування плагінів
+    plugins = {
+      # Синтаксис та підсвічування
+      treesitter = {
+        enable = true;
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+      };
+
+      bufferline = {
+        enable = true;
+      };
+
+      # Швидкий пошук (Telescope)
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>fg" = "live_grep";
+          "<leader>fb" = "buffers";
+          "<leader>fh" = "help_tags";
+        };
+      };
+
+      # Дерево файлів (Neo-tree)
+      neo-tree = {
+        enable = true;
+        settings = {
+          closeIfLastWindow = true;
+          filesystem.filteredItems.visible = true;
+        };
+      };
+
+      # Автодоповнення (blink-cmp або nvim-cmp)
+      cmp = {
+        enable = true;
+        settings = {
+          autoEnableSources = true;
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
+          ];
+          mapping = {
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<Tab>" = "cmp.mapping.select_next_item()";
+            "<S-Tab>" = "cmp.mapping.select_prev_item()";
+          };
+        };
+      };
+
+      # Вбудований LSP підтягує сервери безпосередньо з nixpkgs
+      lsp = {
+        enable = true;
+        servers = {
+          nixd.enable = true;         # LSP для Nix
+          lua_ls.enable = true;       # LSP для Lua
+          bashls.enable = true;       # LSP для Bash/Fish scripts
+          # Тут можна увімкнути будь-які інші мови: ts_ls, pyright, clangd тощо
+        };
+      };
+
+      # Підказки для клавішних скорочень
+      which-key.enable = true;
+
+      # Статус-бар
+      lualine.enable = true;
+
+      # Автозакриття дужок
+      nvim-autopairs.enable = true;
+    };
+
+    # Приклад прив'язки власних гарячих клавіш
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle<CR>";
+        options.desc = "Переключити Neo-tree";
+      }
     ];
-
-    # Декларативні плагіни NixOS
-    plugins = with pkgs.vimPlugins; [
-      # Синтаксис та підсвітка
-      nvim-treesitter.withAllGrammars
-
-      # Пошук файлів та коду
-      telescope-nvim
-
-      # Навігація
-      neo-tree-nvim
-      nvim-web-devicons
-
-      oil-nvim
-      nvim-web-devicons
-      # Інтерфейс та підказки
-      which-key-nvim
-      lualine-nvim
-    ];
-
-    # Підключення Lua-конфігу
-    initLua = ''
-      -- Встановлюємо Space як Leader
-      vim.g.mapleader = " "
-
-      -- Базові налаштування
-      vim.opt.number = true
-      vim.opt.relativenumber = true
-      vim.opt.shiftwidth = 2
-      vim.opt.tabstop = 2
-      vim.opt.expandtab = true
-
-      -- Налаштування Which-Key
-      require("which-key").setup()
-
-      -- Налаштування Neo-tree (Space + e)
-      -- vim.keymap.set('n', '<leader>e', ':NeoTreeRevealToggle<CR>', { silent = true })
-      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-      -- Налаштування Telescope (Space + ff, Space + fg)
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-    '';
   };
 }

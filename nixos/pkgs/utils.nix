@@ -12,6 +12,6 @@
     steam-run
 
     i2c-tools
-    openrgb-with-all-plugins
+    # openrgb-with-all-plugins
   ];
 }

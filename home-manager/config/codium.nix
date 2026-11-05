@@ -41,8 +41,24 @@ in
           "*.qrc" = "qt-core.qrcEditor";
         };
         "qt-core.showWelcomePageOnActivation" = false;
+
+        "continue.models" = [
+          {
+            title = "Qwen 2.5 Coder 14B";
+            provider = "ollama";
+            model = "qwen2.5-coder:14b";
+            apiBase = "http://localhost:11434";
+          }
+          {
+            title = "Llama 3.1 8B";
+            provider = "ollama";
+            model = "llama3.1:8b";
+            apiBase = "http://localhost:11434";
+          }
+        ];
       };
       extensions = with marketplace; [
+        continue.continue
         vscodevim.vim
         arrterian.nix-env-selector
         batisteo.vscode-django
