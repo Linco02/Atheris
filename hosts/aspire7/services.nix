@@ -5,6 +5,8 @@
     tailscale.enable = true;
     flatpak.enable = true;
     upower.enable = true;
+
+    xserver.videoDrivers = [ "nvidia" ];
     # fprintd = {
     #   enable = true;
     #   tod = {
