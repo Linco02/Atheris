@@ -1,6 +1,5 @@
 {
   imports = [
-    ./cava.nix
     ./codium.nix
     ./direnv.nix
     ./firefox.nix
