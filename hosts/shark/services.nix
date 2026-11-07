@@ -23,6 +23,8 @@
       loadModels = ["llama3.1:8b" "qwen2.5-coder:14b"];
       rocmOverrideGfx = "10.3.0";
     };
+
+    xserver.videoDrivers = [ "amdgpu" ];
     
     open-webui.enable = true;
   };
