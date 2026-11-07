@@ -15,7 +15,6 @@
     clang-tools
 
     gparted
-    # fdisk
   ];
 
   # Бібліотеки для розробки

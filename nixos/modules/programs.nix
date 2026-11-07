@@ -4,7 +4,6 @@
   programs = {
     fish.enable = true;
     firefox.enable = true;
-    firejail.enable = true;
 
     hyprland = {
       enable = true;

@@ -51,7 +51,7 @@
       # Default system for hosts that don't explicitly override it.
       defaultSystem = "x86_64-linux";
       homeStateVersion = "26.05";
-      defaultUser = "linco02";
+      user = "linco02";
       # pkgs = nixpkgs.legacyPackages.${defaultSystem};
 
       pkgs = import nixpkgs {
@@ -73,7 +73,7 @@
       developer = import ./nixos/devShell.nix { inherit pkgs; };
 
       # Build a NixOS system for a host.
-      makeSystem = { user, hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
+      makeSystem = { hostname, stateVersion, system ? defaultSystem }: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs stateVersion hostname user; };
         modules = [
@@ -88,7 +88,7 @@
       };
 
       # Build a Home Manager configuration for a host.
-      makeHome = { hostname, user}: home-manager.lib.homeManagerConfiguration {
+      makeHome = { hostname }: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit nixpkgs inputs nur home-manager quickshell nixvim homeStateVersion user hostname; };
         modules = [
@@ -101,13 +101,13 @@
     in
     {
       nixosConfigurations = {
-        aspire7 = makeSystem { user = defaultUser; hostname = "aspire7"; stateVersion = homeStateVersion; };
-        shark = makeSystem { user = defaultUser; hostname = "shark";   stateVersion = homeStateVersion; };
+        aspire7 = makeSystem { hostname = "aspire7"; stateVersion = homeStateVersion; };
+        shark = makeSystem { hostname = "shark";   stateVersion = homeStateVersion; };
       };
 
       homeConfigurations = {
-        "aspire7" = makeHome { user = defaultUser; hostname = "aspire7"; };
-        "shark" = makeHome { user = defaultUser; hostname = "shark"; };
+        "aspire7" = makeHome { hostname = "aspire7"; };
+        "shark" = makeHome { hostname = "shark"; };
       };
 
       devShells.${defaultSystem}.default = pkgs.mkShell {

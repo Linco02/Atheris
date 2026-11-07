@@ -1,29 +1,14 @@
+{ lib, ... }:
+
+let
+  locale = "uk_UA.UTF-8";  # або "cs_CZ.UTF-8"
+in
 {
-  # time.timeZone = "Europe/Kyiv";
-  time.timeZone = "Europe/Prague";
+  time.timeZone = "Europe/Prague";  # або "Europe/Kyiv"
 
-  i18n.defaultLocale = "uk_UA.UTF-8";
-  # i18n.defaultLocale = "cs_CZ.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "uk_UA.UTF-8";
-    LC_IDENTIFICATION = "uk_UA.UTF-8";
-    LC_MEASUREMENT = "uk_UA.UTF-8";
-    LC_MONETARY = "uk_UA.UTF-8";
-    LC_NAME = "uk_UA.UTF-8";
-    LC_NUMERIC = "uk_UA.UTF-8";
-    LC_PAPER = "uk_UA.UTF-8";
-    LC_TELEPHONE = "uk_UA.UTF-8";
-    LC_TIME = "uk_UA.UTF-8";
-
-    # LC_ADDRESS = "cs_CZ.UTF-8";
-    # LC_IDENTIFICATION = "cs_CZ.UTF-8";
-    # LC_MEASUREMENT = "cs_CZ.UTF-8";
-    # LC_MONETARY = "cs_CZ.UTF-8";
-    # LC_NAME = "cs_CZ.UTF-8";
-    # LC_NUMERIC = "cs_CZ.UTF-8";
-    # LC_PAPER = "cs_CZ.UTF-8";
-    # LC_TELEPHONE = "cs_CZ.UTF-8";
-    # LC_TIME = "cs_CZ.UTF-8";
-  };
+  i18n.defaultLocale = locale;
+  i18n.extraLocaleSettings = lib.genAttrs [
+    "LC_ADDRESS" "LC_IDENTIFICATION" "LC_MEASUREMENT" "LC_MONETARY"
+    "LC_NAME" "LC_NUMERIC" "LC_PAPER" "LC_TELEPHONE" "LC_TIME"
+  ] (_: locale);
 }

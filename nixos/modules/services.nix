@@ -1,10 +1,7 @@
-{ user, pkgs, ... }:
+{ user, ... }:
 
 {
   services = {
-    # Bluetooth менеджер
-    # blueman.enable = true;
-
     # Налаштування файлової системи та мініатюр
     gvfs.enable = true;
     udisks2.enable = true;
@@ -12,8 +9,6 @@
     fstrim.enable = true;
 
     power-profiles-daemon.enable = true;
-
-    # fwupd.enable = true;
 
     # Greetd налаштування для Hyprland
     greetd = {
