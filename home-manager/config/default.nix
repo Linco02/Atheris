@@ -2,6 +2,7 @@
   imports = [
     ./cava.nix
     ./codium.nix
+    ./direnv.nix
     ./firefox.nix
     ./fish.nix
     ./git.nix
@@ -12,5 +13,6 @@
     ./qt.nix
     ./rofi.nix
     ./vim.nix
+    ./yazi.nix
   ];
 }

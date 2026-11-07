@@ -1,4 +1,4 @@
-{ pkgs, nur, ... }:
+{ pkgs, ... }:
 
 {
   # Утиліти
@@ -58,8 +58,7 @@
 
     clinfo
     libva-utils
-    nur
-    
+
     cava
 
     nodejs

@@ -1,4 +1,4 @@
-{ pkgs, config, homeStateVersion, user, hostname, inputs, ... }:
+{ pkgs, homeStateVersion, user, ... }:
 
 {
   home = {
@@ -21,7 +21,6 @@
       sway.enable = true;
 
       size = 24;
-      hyprcursor.size = 24;
     };
   };
 

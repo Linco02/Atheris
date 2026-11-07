@@ -1,5 +1,3 @@
-# { config, pkgs, sunshine, ... }:
-
 { config, pkgs, sunshine, ... }:
 
 {

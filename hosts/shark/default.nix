@@ -1,5 +1,6 @@
 {
   imports = [
+    ./amd.nix
     ./boot.nix
     ./disco.nix
     ./filesystem.nix

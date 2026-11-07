@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ pkgs, ... }:
 
 {
   hardware = {
@@ -16,7 +16,7 @@
       enable = true;
       enable32Bit = true;
     };
-
+    
     display = {
       edid.packages = [
         (pkgs.runCommand "edid-aw2725dm" { } ''

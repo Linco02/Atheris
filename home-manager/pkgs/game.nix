@@ -14,7 +14,6 @@
     protonup-qt
 
     mesa
-    jdk17
     mangohud
     gamemode
     libGL

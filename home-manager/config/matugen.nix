@@ -1,3 +1,5 @@
+{ user, ... }:
+
 {
   xdg.configFile."matugen/config.toml".text = ''
     [config]
@@ -5,7 +7,7 @@
 
     [templates.codium]
     input_path = '~/Atheris/assets/matugen/codium.mustache'
-    output_path = '/home/linco02/.vscode-oss/extensions/matugen-theme/theme.json'
+    output_path = '/home/${user}/.vscode-oss/extensions/matugen-theme/theme.json'
     template_type = "Json"
     
     [templates.gtk]

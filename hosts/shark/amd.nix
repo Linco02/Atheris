@@ -1,10 +1,10 @@
-{ config, pkgs, ...}:
+{ ... }:
 
 {
   # Увімкнення AMD яй відеодрайвера
   services.xserver.videoDrivers = [ "amdgpu" ];
-  hardware.opengl = {
+  hardware.amdgpu.overdrive = {
     enable = true;
-    driSupport32Bit = true;
+    ppfeaturemask = "0xffffffff";
   };
 }

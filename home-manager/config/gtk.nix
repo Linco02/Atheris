@@ -1,4 +1,4 @@
-{ pkgs, user, config, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   gtk = {

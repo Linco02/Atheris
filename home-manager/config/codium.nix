@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   marketplace = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
@@ -69,7 +69,6 @@ in
         jnoortheen.nix-ide
         ms-python.debugpy
         ms-python.python
-        # ms-python.vscode-pylance
         njpwerner.autodocstring
         ritwickdey.liveserver
         visualstudioexptteam.intellicode-api-usage-examples
@@ -82,7 +81,6 @@ in
         donjayamanne.python-environment-manager
         donjayamanne.python-extension-pack
         jmkrivocapich.drawfolderstructure
-        # ms-python.vscode-python-envs
         nextbook.file-and-folder-icons
         theqtcompany.qt-core
         theqtcompany.qt-qml

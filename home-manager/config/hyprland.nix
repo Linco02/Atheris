@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ pkgs, hostname, lib, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -8,10 +8,6 @@
       enable = true;
       variables = ["--all"];
     };
-    # plugins = [
-    #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-    # ];
-
     settings = {
       # ============================================================
       # STARTUP & THEMING
@@ -23,10 +19,7 @@
       # Monitor configuration
       monitor = [
         ", preferred, auto, 1"
-        # "eDP-1, disable"
-        "DP-3, 2560x1440@179.84, 0x0, 1"
-        # "HDMI-A-1, 2560x1440@144, -2560x0, 1"E
-      ];
+      ] ++ lib.optional (hostname == "shark") "DP-3, 2560x1440@179.84, 0x0, 1";
 
       env = [
         "HYPRLAND_NO_WARNINGS,1"
@@ -34,7 +27,7 @@
 
       # Startup commands executed on Hyprland launch
       exec-once = [
-        "/nix/store/fxd030lwhc81ajzxbvxcj1y0p8mgf52q-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
+        "${pkgs.dbus}/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
         "dbus-update-activation-environment --systemd --all"
         "QT_QPA_PLATFORMTHEME=qt6ct quickshell -p ~/Atheris-shell/shell.qml"
       ];
@@ -202,7 +195,7 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, R, exec, $menu"
         "$mainMod, F, exec, $browser"
-        ", Print, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png"
+        ", Print, exec, grim -g \"$(slurp)\" - | tee ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png | wl-copy"
 
         # Quickshell shortcuts
         "$mainMod, D, global, quickshell:dashboard_menu"
