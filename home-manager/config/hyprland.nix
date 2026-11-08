@@ -17,9 +17,9 @@
       source = "/tmp/atheris/hypr.conf";
 
       # Monitor configuration
-      monitor = [
-        ", preferred, auto, 1"
-      ] ++ lib.optional (hostname == "shark") "DP-3, 2560x1440@179.84, 0x0, 1";
+      monitor = 
+        if hostname == "shark" then ["DP-3, 2560x1440@179.84, 0x0, 1"]
+        else [", preferred, auto, 1"];
 
       env = [
         "HYPRLAND_NO_WARNINGS,1"

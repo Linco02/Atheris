@@ -2,7 +2,7 @@
   description = "Atheris-Flake by linco02";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
