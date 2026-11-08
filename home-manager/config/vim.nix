@@ -1,9 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+
+    nixpkgs.source = pkgs.path;
+    version.enableNixpkgsReleaseCheck = false;
 
     # Базові опції Neovim (vim.opt)
     opts = {
