@@ -11,7 +11,8 @@ in
     nixpkgs.source = pkgs.path;
     version.enableNixpkgsReleaseCheck = false;
 
-    # extraPackages = [ qmlLs ];
+    # opts.termguicolors = false;
+    # colorscheme = "default";
 
     # Базові опції Neovim (vim.opt)
     opts = {
@@ -121,7 +122,7 @@ in
     extraPackages = [ qmlLs ];
     extraPlugins = [ pkgs.vimPlugins.base16-nvim ];
     extraConfigLua = ''
-    local colors_file = vim.fn.expand("~/.cache/theme/nvim-colors.lua")
+    local colors_file = vim.fn.expand("/tmp/atheris/nvim.lua")
 
     local function load_theme()
       local ok, palette = pcall(dofile, colors_file)

@@ -48,8 +48,8 @@
     output_path = '/tmp/atheris/qt6ct.conf'
 
     [templates.nvim]
-    input_path  = '~/.config/matugen/templates/nvim.lua'
-    output_path = '~/.cache/theme/nvim-colors.lua'
+    input_path  = '~/Atheris/assets/matugen/nvim.lua.mustache'
+    output_path = '/tmp/atheris/nvim.lua'
     post_hook   = 'pkill -USR1 nvim'
   '';
 }
