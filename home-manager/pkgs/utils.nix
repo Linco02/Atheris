@@ -63,6 +63,11 @@
 
     nodejs
 
+    rustc
+    cargo
+    rustfmt
+    clippy
+
     google-chrome
 
     amdgpu_top

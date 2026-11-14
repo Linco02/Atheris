@@ -42,6 +42,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    qml-language-server.url = "github:cushycush/qml-language-server";
+
     claude-code.url = "github:sadjow/claude-code-nix";
   };
 

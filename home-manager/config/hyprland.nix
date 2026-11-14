@@ -201,21 +201,25 @@
         "$mainMod, D, global, quickshell:dashboard_menu"
         "$mainMod, W, global, quickshell:wallpaper_selector"
         "$mainMod, Y, global, quickshell:programs_selector"
-        "$mainMod, L, global, quickshell:lock_session"
+        # "$mainMod, L, global, quickshell:lock_session"
 
         # Window management
         "$mainMod, C, killactive,"
         "$mainMod, V, togglefloating,"
         "$mainMod, B, fullscreen, 0"
         "$mainMod, P, pseudo,"
-        "$mainMod, J, layoutmsg, togglesplit,"
+        # "$mainMod, J, layoutmsg, togglesplit,"
         "$mainMod, M, exit,"
 
         # Window focus navigation (arrow keys)
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        # "$mainMod, left, movefocus, l"
+        # "$mainMod, right, movefocus, r"
+        # "$mainMod, up, movefocus, u"
+        # "$mainMod, down, movefocus, d"
+        "$mainMod, H, movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, K, movefocus, u"
+        "$mainMod, J, movefocus, d"
 
         # Workspace switching (1-10)
         "$mainMod, 1, workspace, 1"

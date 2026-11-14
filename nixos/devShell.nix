@@ -37,9 +37,6 @@
 
   # Редактори та IDE
   editors = with pkgs; [
-    vscodium
-    neovim
-    vim
     qtcreator
     claude-code
   ];

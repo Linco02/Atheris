@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
+let
+  qmlLs = inputs.qml-language-server.packages.${pkgs.stdenv.hostPlatform.system}.default;
+in 
 {
   programs.nixvim = {
     enable = true;
@@ -7,6 +10,8 @@
 
     nixpkgs.source = pkgs.path;
     version.enableNixpkgsReleaseCheck = false;
+
+    # extraPackages = [ qmlLs ];
 
     # Базові опції Neovim (vim.opt)
     opts = {
@@ -85,7 +90,21 @@
           nixd.enable = true;         # LSP для Nix
           lua_ls.enable = true;       # LSP для Lua
           bashls.enable = true;       # LSP для Bash/Fish scripts
-          # Тут можна увімкнути будь-які інші мови: ts_ls, pyright, clangd тощо
+          clangd.enable = true;
+          rust_analyzer = {
+            enable = true;
+            installCargo = false; # cargo вже встановлений окремо (pkgs/utils.nix)
+            installRustc = false; # rustc також
+          };
+          # qml-language-server = {
+          #   enable = true;
+          #   package = qmlLs;
+          #   config = {
+          #     cmd = [ "qml-language-server" ];
+          #     filetypes = [ "qml" ];
+          #     root_markers = [ [ "qmldir" "shell.qml" ] ".git" ];
+          #   };
+          # };
         };
       };
 
@@ -98,6 +117,36 @@
       # Автозакриття дужок
       nvim-autopairs.enable = true;
     };
+
+    extraPackages = [ qmlLs ];
+    extraPlugins = [ pkgs.vimPlugins.base16-nvim ];
+    extraConfigLua = ''
+    local colors_file = vim.fn.expand("~/.cache/theme/nvim-colors.lua")
+
+    local function load_theme()
+      local ok, palette = pcall(dofile, colors_file)
+      if ok and type(palette) == "table" then
+        require("base16-colorscheme").setup(palette)
+      else
+        vim.cmd.colorscheme("habamax") -- запасна тема, якщо файлу ще нема
+      end
+    end
+
+    load_theme()
+
+    -- перезавантаження теми на льоту: pkill -USR1 nvim
+    vim.api.nvim_create_autocmd("Signal", {
+      pattern = "SIGUSR1",
+      callback = function() vim.schedule(load_theme) end,
+    })
+    
+      vim.lsp.config("qml-language-server", {
+        cmd = { "qml-language-server" },
+        filetypes = { "qml" },
+        root_markers = { { "qmldir", "shell.qml" }, ".git" },
+      })
+      vim.lsp.enable("qml-language-server")
+    '';
 
     # Приклад прив'язки власних гарячих клавіш
     keymaps = [
